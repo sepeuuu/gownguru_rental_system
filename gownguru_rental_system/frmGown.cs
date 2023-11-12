@@ -70,6 +70,7 @@ namespace gownguru_rental_system
                 gownModule.cbConditionBef.Text = dgvGown.Rows[e.RowIndex].Cells[6].Value.ToString();
                 gownModule.txtDesc.Text = dgvGown.Rows[e.RowIndex].Cells[7].Value.ToString();
                 gownModule.cbCategory.Text = dgvGown.Rows[e.RowIndex].Cells[8].Value.ToString();
+                gownModule.txtPic.Text = dgvGown.Rows[e.RowIndex].Cells[9].Value.ToString();
                 gownModule.btnSave.Enabled = false;
                 gownModule.btnUpdate.Enabled = true;
                 gownModule.ShowDialog();

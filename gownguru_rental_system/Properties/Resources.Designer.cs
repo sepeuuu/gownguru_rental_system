@@ -89,5 +89,25 @@ namespace gownguru_rental_system.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9990401_mannequin_fashion_clothing_dress_clothes_icon__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("9990401_mannequin_fashion_clothing_dress_clothes_icon (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gownPic1 {
+            get {
+                object obj = ResourceManager.GetObject("gownPic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

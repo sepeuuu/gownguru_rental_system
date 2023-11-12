@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,7 +60,12 @@ namespace gownguru_rental_system
             {
                 if (MessageBox.Show("Are you sure you want to save this gown??", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cm = new SqlCommand("INSERT INTO tblGown(gname,gstatus,gsize,gprice,gconditionbefore,gdescription,gcategory)VALUES(@gname,@gstatus,@gsize,@gprice,@gconditionbefore,@gdescription,@gcategory)", con);
+                    Image temp = new Bitmap(txtPic.Image);
+                    MemoryStream ms = new MemoryStream();
+                    temp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    Byte[] ByteArray = ms.ToArray();
+
+                    cm = new SqlCommand("INSERT INTO tblGown(gname,gstatus,gsize,gprice,gconditionbefore,gdescription,gcategory,gpic)VALUES(@gname,@gstatus,@gsize,@gprice,@gconditionbefore,@gdescription,@gcategory,@gpic)", con);
                     cm.Parameters.AddWithValue("@gname", txtName.Text);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
                     cm.Parameters.AddWithValue("@gsize", cbSize.Text);
@@ -66,10 +73,12 @@ namespace gownguru_rental_system
                     cm.Parameters.AddWithValue("@gconditionbefore", cbConditionBef.Text);
                     cm.Parameters.AddWithValue("@gdescription", txtDesc.Text);
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
+                    cm.Parameters.AddWithValue("@gpic", ByteArray);
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Gown has been successfully saved!");
+                    txtPic.Image = Properties.Resources.gownPic1;
                     Clear();
 
                 }
@@ -98,7 +107,12 @@ namespace gownguru_rental_system
             {
                 if (MessageBox.Show("Are you sure you want to update this gown?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cm = new SqlCommand("UPDATE tblGown SET gname = @gname, gstatus = @gstatus, gsize = @gsize, gprice = @gprice, gconditionbefore = @gconditionbefore, gdescription = @gdescription, gcategory = @gcategory WHERE gid LIKE '" + lblGid.Text + "' ", con);
+                    Image temp = new Bitmap(txtPic.Image);
+                    MemoryStream ms = new MemoryStream();
+                    temp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    Byte[] ByteArray = ms.ToArray();
+
+                    cm = new SqlCommand("UPDATE tblGown SET gname = @gname, gstatus = @gstatus, gsize = @gsize, gprice = @gprice, gconditionbefore = @gconditionbefore, gdescription = @gdescription, gcategory = @gcategory, gpic = @gpic WHERE gid LIKE '" + lblGid.Text + "' ", con);
                     cm.Parameters.AddWithValue("@gname", txtName.Text);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
                     cm.Parameters.AddWithValue("@gsize", cbSize.Text);
@@ -106,7 +120,8 @@ namespace gownguru_rental_system
                     cm.Parameters.AddWithValue("@gconditionbefore", cbConditionBef.Text);
                     cm.Parameters.AddWithValue("@gdescription", txtDesc.Text);
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
-                    
+                    cm.Parameters.AddWithValue("@gpic", ByteArray);
+
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
@@ -129,6 +144,11 @@ namespace gownguru_rental_system
         }
 
         private void frmGownAdd_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPic_Click(object sender, EventArgs e)
         {
 
         }
