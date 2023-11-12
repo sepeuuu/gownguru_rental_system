@@ -121,7 +121,7 @@
   <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAASJJREFUOE+lk01uAjEMRrOBDT1C6YlAFYveATZVoeWIQMsxQIJeoj/fG8VRmHGG
+        DAAACwwBP0AiyAAAASJJREFUOE+lk01uAjEMRrOBDT1C6YlAFYveATZVoeWIQMsxQIJeoj/fG8VRmHGG
         CD7pSVbiWLZjhwoNxTiCfZMexFp8iV/xF/kRn+JD4FOlmfgWFqTEWTyLXi1FntE1yPhNuCIzL9hBTCLH
         eJZD0E6m9KNU5lyYFsLzofyRSOIDPEd4ESZszwfeRdJeeE5QG3AnGjFb9MEu6Bll8hgehQnbzik/7ykx
         BiI8xQOD5tcK3/wtse4KOBX52yZgu2TKoJybS0ask1204bEJ2/OBjUhiNz0nqA24EkkMNsPpOVKaqTTY
@@ -144,7 +144,7 @@
   <data name="Edit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAJlJREFUOE/t0TEKwlAQhOGnN0kjSOzSeICcwyOk8QKWKeyt9HqaJpATmH/EB2Gx
+        DgAACw4BQL7hQQAAAJlJREFUOE/t0TEKwlAQhOGnN0kjSOzSeICcwyOk8QKWKeyt9HqaJpATmH/EB2Gx
         cLONBAe+IhAmOyQtNmscULyeglnhgic6lAhlgwEqlDtmXaqZZ2yxx7RU812xM3eo0OMGfezr6OUr8jXy
         gC7V/HBZpvmuTGda7pn/Mn+Z0uBTmf6yu0w5wZbNuizHFobKlBrt2xGhsl9NSiMXckr3Kn/HHQAAAABJ
         RU5ErkJggg==
@@ -156,7 +156,7 @@
   <data name="Delete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAUZJREFUOE+9U8tOwzAQNHwB5Vhv0juPP4BeaXtGXODYb2ngKxFISVq+ANpKZcZd
+        DgAACw4BQL7hQQAAAUZJREFUOE+9U8tOwzAQNHwB5Vhv0juPP4BeaXtGXODYb2ngKxFISVq+ANpKZcZd
         oHE3wSDBSKMk9ux4VxO7f8XGucNa5KzyfkLynWu6nY5nkeNK5L70vsZzs0usVXgWT3neU3k3IB6WIi+7
         JhahWZRZdqllNiAcYrS3uLiV0LaacsyUzmKyU3N8nPZgFSSyUJstmJwVAA65QwdTcKWcci3WMahG+nOR
         81gUhDDgft3v35B8D6aGts6yU+4H4NSxJULxGrxVGXXX+F5ZWnCkspDuKNoMNA29X7Zor1SGkXgbbNHv
