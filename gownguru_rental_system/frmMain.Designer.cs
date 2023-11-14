@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMax = new System.Windows.Forms.PictureBox();
+            this.btnMin = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnCategory = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
@@ -42,14 +43,12 @@
             this.btnGown = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.CenterPanel = new System.Windows.Forms.Panel();
-            this.btnMax = new System.Windows.Forms.PictureBox();
-            this.btnMin = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.PictureBox();
+            this.btnCategory = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,10 +64,43 @@
             this.panel1.Size = new System.Drawing.Size(882, 25);
             this.panel1.TabIndex = 0;
             // 
+            // btnMax
+            // 
+            this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
+            this.btnMax.Location = new System.Drawing.Point(826, 3);
+            this.btnMax.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(23, 18);
+            this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMax.TabIndex = 3;
+            this.btnMax.TabStop = false;
+            // 
+            // btnMin
+            // 
+            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
+            this.btnMin.Location = new System.Drawing.Point(797, -1);
+            this.btnMin.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(23, 18);
+            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMin.TabIndex = 2;
+            this.btnMin.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(855, 3);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(23, 18);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 0;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnSettings);
             this.panel2.Controls.Add(this.btnCategory);
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.btnSales);
@@ -83,28 +115,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(125, 471);
             this.panel2.TabIndex = 1;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.Location = new System.Drawing.Point(4, 300);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(119, 31);
-            this.btnSettings.TabIndex = 9;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnCategory
-            // 
-            this.btnCategory.Location = new System.Drawing.Point(4, 263);
-            this.btnCategory.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(119, 31);
-            this.btnCategory.TabIndex = 8;
-            this.btnCategory.Text = "Category";
-            this.btnCategory.UseVisualStyleBackColor = true;
-            this.btnCategory.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnLogout
             // 
@@ -201,39 +211,16 @@
             this.CenterPanel.Size = new System.Drawing.Size(749, 471);
             this.CenterPanel.TabIndex = 2;
             // 
-            // btnMax
+            // btnCategory
             // 
-            this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(763, 2);
-            this.btnMax.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(23, 18);
-            this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMax.TabIndex = 3;
-            this.btnMax.TabStop = false;
-            // 
-            // btnMin
-            // 
-            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.Location = new System.Drawing.Point(734, -2);
-            this.btnMin.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(23, 18);
-            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMin.TabIndex = 2;
-            this.btnMin.TabStop = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(792, 2);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(23, 18);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 0;
-            this.btnExit.TabStop = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnCategory.Location = new System.Drawing.Point(4, 261);
+            this.btnCategory.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(117, 31);
+            this.btnCategory.TabIndex = 10;
+            this.btnCategory.Text = "Category";
+            this.btnCategory.UseVisualStyleBackColor = true;
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // frmMain
             // 
@@ -251,10 +238,10 @@
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -276,6 +263,5 @@
         private System.Windows.Forms.Panel CenterPanel;
         private System.Windows.Forms.PictureBox btnMax;
         private System.Windows.Forms.Button btnCategory;
-        private System.Windows.Forms.Button btnSettings;
     }
 }

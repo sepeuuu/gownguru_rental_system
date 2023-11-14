@@ -371,7 +371,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(724, 194);
+            this.dataGridView1.Size = new System.Drawing.Size(733, 194);
             this.dataGridView1.TabIndex = 3;
             // 
             // Column1

@@ -158,9 +158,9 @@
             this.label8.Location = new System.Drawing.Point(314, 144);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 16);
+            this.label8.Size = new System.Drawing.Size(60, 16);
             this.label8.TabIndex = 17;
-            this.label8.Text = "Condition Before";
+            this.label8.Text = "Condition";
             // 
             // label9
             // 

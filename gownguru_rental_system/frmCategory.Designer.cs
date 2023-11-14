@@ -101,7 +101,7 @@
             this.dgvCategory.Location = new System.Drawing.Point(0, 60);
             this.dgvCategory.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvCategory.Name = "dgvCategory";
-            this.dgvCategory.Size = new System.Drawing.Size(749, 411);
+            this.dgvCategory.Size = new System.Drawing.Size(749, 285);
             this.dgvCategory.TabIndex = 10;
             this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentClick);
             // 
@@ -147,7 +147,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(749, 471);
+            this.ClientSize = new System.Drawing.Size(749, 345);
             this.Controls.Add(this.dgvCategory);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

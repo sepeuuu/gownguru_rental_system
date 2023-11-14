@@ -79,14 +79,19 @@ namespace gownguru_rental_system
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /*private void button1_Click(object sender, EventArgs e)
         {
             openChildForm(new frmCategory());
-        }
+        }*/
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             openChildForm(new frmSettings());
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmCategory());
         }
     }
 }
