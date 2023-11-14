@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace gownguru_rental_system
 {
-    public partial class frmCategory : Sample
+    public partial class frmCategory : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QS67U0AV\SQLEXPRESS;Initial Catalog=DB_GRS;Integrated Security=True");
         SqlCommand cm = new SqlCommand();

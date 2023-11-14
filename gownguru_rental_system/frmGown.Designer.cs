@@ -57,8 +57,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(687, 60);
+            this.panel1.Size = new System.Drawing.Size(749, 60);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -66,6 +67,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 19);
             this.label1.TabIndex = 0;
@@ -74,16 +76,18 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(94, 77);
+            this.txtSearch.Location = new System.Drawing.Point(94, 78);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(189, 21);
+            this.txtSearch.Size = new System.Drawing.Size(190, 21);
             this.txtSearch.TabIndex = 6;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnAdd
             // 
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(653, 77);
+            this.btnAdd.Location = new System.Drawing.Point(714, 78);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(22, 30);
             this.btnAdd.TabIndex = 7;
@@ -118,8 +122,9 @@
             this.Delete});
             this.dgvGown.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvGown.Location = new System.Drawing.Point(0, 113);
+            this.dgvGown.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvGown.Name = "dgvGown";
-            this.dgvGown.Size = new System.Drawing.Size(687, 358);
+            this.dgvGown.Size = new System.Drawing.Size(749, 358);
             this.dgvGown.TabIndex = 10;
             this.dgvGown.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGown_CellContentClick);
             // 
@@ -200,6 +205,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 12;
@@ -209,12 +215,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 471);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(749, 471);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvGown);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "frmGown";
             this.Text = "frmGown";
             this.Load += new System.EventHandler(this.frmGown_Load);

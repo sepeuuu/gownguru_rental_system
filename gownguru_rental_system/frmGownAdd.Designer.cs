@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGownAdd));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.Label();
@@ -51,10 +52,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtPic = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -63,15 +63,29 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(605, 60);
+            this.panel2.Size = new System.Drawing.Size(606, 60);
             this.panel2.TabIndex = 2;
+            // 
+            // pictureBoxClose
+            // 
+            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
+            this.pictureBoxClose.Location = new System.Drawing.Point(586, 0);
+            this.pictureBoxClose.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pictureBoxClose.Name = "pictureBoxClose";
+            this.pictureBoxClose.Size = new System.Drawing.Size(19, 21);
+            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxClose.TabIndex = 13;
+            this.pictureBoxClose.TabStop = false;
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 21);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 19);
             this.label2.TabIndex = 0;
@@ -80,7 +94,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 88);
+            this.label1.Location = new System.Drawing.Point(27, 89);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 12;
@@ -89,7 +104,8 @@
             // txtStatus
             // 
             this.txtStatus.AutoSize = true;
-            this.txtStatus.Location = new System.Drawing.Point(183, 88);
+            this.txtStatus.Location = new System.Drawing.Point(183, 89);
+            this.txtStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(40, 16);
             this.txtStatus.TabIndex = 13;
@@ -99,6 +115,7 @@
             // 
             this.lblGid.AutoSize = true;
             this.lblGid.Location = new System.Drawing.Point(27, 337);
+            this.lblGid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGid.Name = "lblGid";
             this.lblGid.Size = new System.Drawing.Size(49, 16);
             this.lblGid.TabIndex = 8;
@@ -108,7 +125,8 @@
             // txtSize
             // 
             this.txtSize.AutoSize = true;
-            this.txtSize.Location = new System.Drawing.Point(314, 88);
+            this.txtSize.Location = new System.Drawing.Point(314, 89);
+            this.txtSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(82, 16);
             this.txtSize.TabIndex = 14;
@@ -118,6 +136,7 @@
             // 
             this.Category.AutoSize = true;
             this.Category.Location = new System.Drawing.Point(183, 144);
+            this.Category.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Category.Name = "Category";
             this.Category.Size = new System.Drawing.Size(58, 16);
             this.Category.TabIndex = 16;
@@ -127,6 +146,7 @@
             // 
             this.txtPrice.AutoSize = true;
             this.txtPrice.Location = new System.Drawing.Point(27, 144);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(71, 16);
             this.txtPrice.TabIndex = 15;
@@ -136,6 +156,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(314, 144);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 16);
             this.label8.TabIndex = 17;
@@ -145,6 +166,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(27, 198);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 16);
             this.label9.TabIndex = 18;
@@ -153,13 +175,15 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(30, 107);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(138, 21);
             this.txtName.TabIndex = 0;
             // 
             // txtRprice
             // 
-            this.txtRprice.Location = new System.Drawing.Point(30, 163);
+            this.txtRprice.Location = new System.Drawing.Point(30, 162);
+            this.txtRprice.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtRprice.Name = "txtRprice";
             this.txtRprice.Size = new System.Drawing.Size(138, 21);
             this.txtRprice.TabIndex = 3;
@@ -173,6 +197,7 @@
             "Lost",
             "Damaged/Accident"});
             this.cbStatus.Location = new System.Drawing.Point(186, 107);
+            this.cbStatus.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(115, 24);
             this.cbStatus.TabIndex = 1;
@@ -185,7 +210,8 @@
             "Small",
             "Meduim",
             "Large"});
-            this.cbSize.Location = new System.Drawing.Point(317, 104);
+            this.cbSize.Location = new System.Drawing.Point(317, 103);
+            this.cbSize.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbSize.Name = "cbSize";
             this.cbSize.Size = new System.Drawing.Size(115, 24);
             this.cbSize.TabIndex = 2;
@@ -193,7 +219,8 @@
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(186, 163);
+            this.cbCategory.Location = new System.Drawing.Point(186, 162);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(115, 24);
             this.cbCategory.TabIndex = 4;
@@ -206,7 +233,8 @@
             "Good",
             "Fair",
             "Poor"});
-            this.cbConditionBef.Location = new System.Drawing.Point(317, 163);
+            this.cbConditionBef.Location = new System.Drawing.Point(317, 162);
+            this.cbConditionBef.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbConditionBef.Name = "cbConditionBef";
             this.cbConditionBef.Size = new System.Drawing.Size(115, 24);
             this.cbConditionBef.TabIndex = 5;
@@ -214,6 +242,7 @@
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(30, 217);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(402, 79);
             this.txtDesc.TabIndex = 6;
@@ -222,8 +251,9 @@
             // btnBrowse
             // 
             this.btnBrowse.Location = new System.Drawing.Point(486, 220);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(73, 31);
+            this.btnBrowse.Size = new System.Drawing.Size(74, 31);
             this.btnBrowse.TabIndex = 7;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -232,8 +262,9 @@
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(500, 322);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(73, 31);
+            this.btnClear.Size = new System.Drawing.Size(74, 31);
             this.btnClear.TabIndex = 11;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -242,8 +273,9 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(342, 322);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(73, 31);
+            this.btnSave.Size = new System.Drawing.Size(74, 31);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -252,8 +284,9 @@
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(421, 322);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(73, 31);
+            this.btnUpdate.Size = new System.Drawing.Size(74, 31);
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -262,7 +295,8 @@
             // txtPic
             // 
             this.txtPic.Image = global::gownguru_rental_system.Properties.Resources.gownPic1;
-            this.txtPic.Location = new System.Drawing.Point(466, 88);
+            this.txtPic.Location = new System.Drawing.Point(465, 89);
+            this.txtPic.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtPic.Name = "txtPic";
             this.txtPic.Size = new System.Drawing.Size(107, 126);
             this.txtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -270,22 +304,12 @@
             this.txtPic.TabStop = false;
             this.txtPic.Click += new System.EventHandler(this.txtPic_Click);
             // 
-            // pictureBoxClose
-            // 
-            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(586, 0);
-            this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(19, 21);
-            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxClose.TabIndex = 13;
-            this.pictureBoxClose.TabStop = false;
-            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
-            // 
             // frmGownAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 376);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(606, 377);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
@@ -307,13 +331,17 @@
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "frmGownAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGownAdd";
             this.Load += new System.EventHandler(this.frmGownAdd_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

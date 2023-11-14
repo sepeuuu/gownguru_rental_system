@@ -30,10 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMax = new System.Windows.Forms.PictureBox();
-            this.btnMin = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnCategory = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
@@ -43,12 +42,14 @@
             this.btnGown = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.CenterPanel = new System.Windows.Forms.Panel();
-            this.btnCategory = new System.Windows.Forms.Button();
+            this.btnMax = new System.Windows.Forms.PictureBox();
+            this.btnMin = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,44 +60,15 @@
             this.panel1.Controls.Add(this.btnMin);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(818, 24);
+            this.panel1.Size = new System.Drawing.Size(882, 25);
             this.panel1.TabIndex = 0;
-            // 
-            // btnMax
-            // 
-            this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(763, 3);
-            this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(23, 18);
-            this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMax.TabIndex = 3;
-            this.btnMax.TabStop = false;
-            // 
-            // btnMin
-            // 
-            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.Location = new System.Drawing.Point(734, -3);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(23, 18);
-            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMin.TabIndex = 2;
-            this.btnMin.TabStop = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(792, 3);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(23, 18);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 0;
-            this.btnExit.TabStop = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnSettings);
             this.panel2.Controls.Add(this.btnCategory);
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.btnSales);
@@ -107,13 +79,37 @@
             this.panel2.Controls.Add(this.btnGown);
             this.panel2.Controls.Add(this.btnDashboard);
             this.panel2.Location = new System.Drawing.Point(12, 42);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(125, 471);
             this.panel2.TabIndex = 1;
             // 
+            // btnSettings
+            // 
+            this.btnSettings.Location = new System.Drawing.Point(4, 300);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(119, 31);
+            this.btnSettings.TabIndex = 9;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnCategory
+            // 
+            this.btnCategory.Location = new System.Drawing.Point(4, 263);
+            this.btnCategory.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(119, 31);
+            this.btnCategory.TabIndex = 8;
+            this.btnCategory.Text = "Category";
+            this.btnCategory.UseVisualStyleBackColor = true;
+            this.btnCategory.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(3, 437);
+            this.btnLogout.Location = new System.Drawing.Point(4, 437);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(119, 31);
             this.btnLogout.TabIndex = 7;
@@ -122,7 +118,8 @@
             // 
             // btnSales
             // 
-            this.btnSales.Location = new System.Drawing.Point(3, 226);
+            this.btnSales.Location = new System.Drawing.Point(4, 226);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(119, 31);
             this.btnSales.TabIndex = 6;
@@ -132,7 +129,8 @@
             // 
             // btnUser
             // 
-            this.btnUser.Location = new System.Drawing.Point(3, 189);
+            this.btnUser.Location = new System.Drawing.Point(4, 190);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(119, 31);
             this.btnUser.TabIndex = 5;
@@ -142,7 +140,8 @@
             // 
             // btnReturned
             // 
-            this.btnReturned.Location = new System.Drawing.Point(3, 152);
+            this.btnReturned.Location = new System.Drawing.Point(4, 153);
+            this.btnReturned.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnReturned.Name = "btnReturned";
             this.btnReturned.Size = new System.Drawing.Size(119, 31);
             this.btnReturned.TabIndex = 4;
@@ -152,7 +151,8 @@
             // 
             // btnRented
             // 
-            this.btnRented.Location = new System.Drawing.Point(3, 115);
+            this.btnRented.Location = new System.Drawing.Point(4, 114);
+            this.btnRented.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnRented.Name = "btnRented";
             this.btnRented.Size = new System.Drawing.Size(119, 31);
             this.btnRented.TabIndex = 3;
@@ -162,7 +162,8 @@
             // 
             // btnCustomer
             // 
-            this.btnCustomer.Location = new System.Drawing.Point(3, 78);
+            this.btnCustomer.Location = new System.Drawing.Point(4, 78);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(119, 31);
             this.btnCustomer.TabIndex = 2;
@@ -172,7 +173,8 @@
             // 
             // btnGown
             // 
-            this.btnGown.Location = new System.Drawing.Point(3, 41);
+            this.btnGown.Location = new System.Drawing.Point(4, 41);
+            this.btnGown.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnGown.Name = "btnGown";
             this.btnGown.Size = new System.Drawing.Size(119, 31);
             this.btnGown.TabIndex = 1;
@@ -182,7 +184,8 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(3, 4);
+            this.btnDashboard.Location = new System.Drawing.Point(4, 4);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(119, 31);
             this.btnDashboard.TabIndex = 0;
@@ -192,37 +195,66 @@
             // 
             // CenterPanel
             // 
-            this.CenterPanel.Location = new System.Drawing.Point(143, 42);
+            this.CenterPanel.Location = new System.Drawing.Point(144, 42);
+            this.CenterPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(687, 471);
+            this.CenterPanel.Size = new System.Drawing.Size(749, 471);
             this.CenterPanel.TabIndex = 2;
             // 
-            // btnCategory
+            // btnMax
             // 
-            this.btnCategory.Location = new System.Drawing.Point(3, 263);
-            this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(119, 31);
-            this.btnCategory.TabIndex = 8;
-            this.btnCategory.Text = "Categories";
-            this.btnCategory.UseVisualStyleBackColor = true;
-            this.btnCategory.Click += new System.EventHandler(this.button1_Click);
+            this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
+            this.btnMax.Location = new System.Drawing.Point(763, 2);
+            this.btnMax.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(23, 18);
+            this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMax.TabIndex = 3;
+            this.btnMax.TabStop = false;
+            // 
+            // btnMin
+            // 
+            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
+            this.btnMin.Location = new System.Drawing.Point(734, -2);
+            this.btnMin.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(23, 18);
+            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMin.TabIndex = 2;
+            this.btnMin.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(792, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(23, 18);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 0;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 525);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(906, 526);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,5 +276,6 @@
         private System.Windows.Forms.Panel CenterPanel;
         private System.Windows.Forms.PictureBox btnMax;
         private System.Windows.Forms.Button btnCategory;
+        private System.Windows.Forms.Button btnSettings;
     }
 }

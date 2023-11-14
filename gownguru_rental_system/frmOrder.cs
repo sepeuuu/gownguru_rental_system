@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace gownguru_rental_system
 {
-    public partial class frmAdminDashboard : Form
+    public partial class frmOrder : Form
     {
-        public frmAdminDashboard()
+        public frmOrder()
         {
             InitializeComponent();
         }

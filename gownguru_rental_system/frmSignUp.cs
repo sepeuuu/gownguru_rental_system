@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace gownguru_rental_system
 {
-    public partial class frmSignUp : Sample
+    public partial class frmSignUp : Form
     {
         public frmSignUp()
         {

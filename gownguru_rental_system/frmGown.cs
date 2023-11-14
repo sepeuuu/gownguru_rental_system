@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace gownguru_rental_system
 {
-    public partial class frmGown : Sample
+    public partial class frmGown : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QS67U0AV\SQLEXPRESS;Initial Catalog=DB_GRS;Integrated Security=True");
         SqlCommand cm = new SqlCommand();

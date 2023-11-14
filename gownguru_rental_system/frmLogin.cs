@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace gownguru_rental_system
 {
-    public partial class frmLogin : Sample
+    public partial class frmLogin : Form
     {
         public frmLogin()
         {
