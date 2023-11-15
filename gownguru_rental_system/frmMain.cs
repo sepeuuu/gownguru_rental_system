@@ -36,12 +36,7 @@ namespace gownguru_rental_system
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //_obj = this;
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+   
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -61,7 +56,7 @@ namespace gownguru_rental_system
 
         private void btnRented_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new frmRented());
         }
 
         private void btnReturned_Click(object sender, EventArgs e)
@@ -71,7 +66,7 @@ namespace gownguru_rental_system
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmUser());
+            openChildForm(new frmEmployee());
         }
 
         private void btnSales_Click(object sender, EventArgs e)
@@ -82,6 +77,11 @@ namespace gownguru_rental_system
         private void btnCategory_Click(object sender, EventArgs e)
         {
             openChildForm(new frmCategory());
+        }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

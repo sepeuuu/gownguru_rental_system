@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace gownguru_rental_system
 {
@@ -25,13 +26,13 @@ namespace gownguru_rental_system
         {
             int i = 0;
             dgvGown.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM tblGown WHERE CONCAT(gid,gname,gstatus,gsize,gprice,gconditionbefore,gdescription,gcategory) LIKE '%" + txtSearch.Text + "%'", con);
+            cm = new SqlCommand("SELECT * FROM tblGown WHERE CONCAT(gid,gname,gdescription,gsize,gcolor,gcondition,gprice,gdateadded,gcategory,gstatus) LIKE '%" + txtSearch.Text + "%'", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i++;
-                dgvGown.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString());
+                dgvGown.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString());
             }
             dr.Close();
             con.Close();
@@ -61,19 +62,24 @@ namespace gownguru_rental_system
             string colName = dgvGown.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
             {
-                frmGownAdd gownModule = new frmGownAdd();
-                gownModule.lblGid.Text = dgvGown.Rows[e.RowIndex].Cells[1].Value.ToString();
-                gownModule.txtName.Text = dgvGown.Rows[e.RowIndex].Cells[2].Value.ToString();
-                gownModule.cbStatus.Text = dgvGown.Rows[e.RowIndex].Cells[3].Value.ToString();
-                gownModule.cbSize.Text = dgvGown.Rows[e.RowIndex].Cells[4].Value.ToString();
-                gownModule.txtRprice.Text = dgvGown.Rows[e.RowIndex].Cells[5].Value.ToString();
-                gownModule.cbConditionBef.Text = dgvGown.Rows[e.RowIndex].Cells[6].Value.ToString();
-                gownModule.txtDesc.Text = dgvGown.Rows[e.RowIndex].Cells[7].Value.ToString();
-                gownModule.cbCategory.Text = dgvGown.Rows[e.RowIndex].Cells[8].Value.ToString();
-                gownModule.txtPic.Text = dgvGown.Rows[e.RowIndex].Cells[9].Value.ToString();
-                gownModule.btnSave.Enabled = false;
-                gownModule.btnUpdate.Enabled = true;
-                gownModule.ShowDialog();
+                frmGownAdd gownAdd = new frmGownAdd();
+                gownAdd.lblGid.Text = dgvGown.Rows[e.RowIndex].Cells[1].Value.ToString();
+                gownAdd.txtName.Text = dgvGown.Rows[e.RowIndex].Cells[2].Value.ToString();
+                gownAdd.txtDesc.Text = dgvGown.Rows[e.RowIndex].Cells[3].Value.ToString();
+                gownAdd.cbSize.Text = dgvGown.Rows[e.RowIndex].Cells[4].Value.ToString();
+                gownAdd.txtColor.Text = dgvGown.Rows[e.RowIndex].Cells[5].Value.ToString();
+                gownAdd.cbCondition.Text = dgvGown.Rows[e.RowIndex].Cells[6].Value.ToString();
+                gownAdd.txtRprice.Text = dgvGown.Rows[e.RowIndex].Cells[7].Value.ToString();
+                gownAdd.dtDateAdded.Text = dgvGown.Rows[e.RowIndex].Cells[8].Value.ToString();
+                gownAdd.cbCategory.Text = dgvGown.Rows[e.RowIndex].Cells[9].Value.ToString();
+                gownAdd.cbStatus.Text = dgvGown.Rows[e.RowIndex].Cells[10].Value.ToString();
+                byte[] img = (byte[])dgvGown.Rows[e.RowIndex].Cells[11].Value;
+                MemoryStream ms = new MemoryStream(img);
+                gownAdd.txtPic.Image = Image.FromStream(ms);
+
+                gownAdd.btnSave.Enabled = false;
+                gownAdd.btnUpdate.Enabled = true;
+                gownAdd.ShowDialog();
             }
             else if (colName == "Delete")
             {

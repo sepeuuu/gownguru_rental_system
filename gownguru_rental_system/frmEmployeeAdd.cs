@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace gownguru_rental_system
 {
-    public partial class frmUserAdd : Form
+    public partial class frmEmployeeAdd : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QS67U0AV\SQLEXPRESS;Initial Catalog=DB_GRS;Integrated Security=True");
         SqlCommand cm = new SqlCommand();
-        public frmUserAdd()
+        public frmEmployeeAdd()
         {
             InitializeComponent();
         }
@@ -36,11 +36,12 @@ namespace gownguru_rental_system
                 }
                 if (MessageBox.Show("Are you sure you want to save this user?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cm = new SqlCommand("INSERT INTO tblUser(username,fullname,password,phone,account)VALUES(@username,@fullname,@password,@phone,@account)", con);
+                    cm = new SqlCommand("INSERT INTO tblEmployee(username,fullname,password,phone,address,account)VALUES(@username,@fullname,@password,@phone,@address,@account)", con);
                     cm.Parameters.AddWithValue("@username", txtUsername.Text);
                     cm.Parameters.AddWithValue("@fullname", txtFullName.Text);
                     cm.Parameters.AddWithValue("@password", txtPass.Text);
                     cm.Parameters.AddWithValue("@phone", txtPhone.Text);
+                    cm.Parameters.AddWithValue("@address", txtAddress.Text);
                     cm.Parameters.AddWithValue("@account", txtAccount.Text);
                     con.Open();
                     cm.ExecuteNonQuery();
@@ -63,6 +64,7 @@ namespace gownguru_rental_system
             txtPass.Clear();
             txtRePass.Clear();
             txtPhone.Clear();
+            txtAddress.Clear();
             txtAccount.Clear();
         }
 
@@ -77,7 +79,7 @@ namespace gownguru_rental_system
                 }
                 if (MessageBox.Show("Are you sure you want to update this user?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cm = new SqlCommand("UPDATE tblUser SET fullname = @fullname, password = @password, phone = @phone, account = @account WHERE username LIKE '" + txtUsername.Text + "' ", con);
+                    cm = new SqlCommand("UPDATE tblEmployee SET fullname = @fullname, password = @password, phone = @phone, address = @address, account = @account WHERE username LIKE '" + txtUsername.Text + "' ", con);
                     cm.Parameters.AddWithValue("@username", txtUsername.Text);
                     cm.Parameters.AddWithValue("@fullname", txtFullName.Text);
                     cm.Parameters.AddWithValue("@password", txtPass.Text);

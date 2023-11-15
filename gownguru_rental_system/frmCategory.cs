@@ -54,7 +54,6 @@ namespace gownguru_rental_system
                 frmCategoryAdd categoryModule = new frmCategoryAdd();
                 categoryModule.lblCatId.Text = dgvCategory.Rows[e.RowIndex].Cells[1].Value.ToString();
                 categoryModule.txtCatName.Text = dgvCategory.Rows[e.RowIndex].Cells[2].Value.ToString();
-
                 categoryModule.btnSave.Enabled = false;
                 categoryModule.btnUpdate.Enabled = true;
                 categoryModule.ShowDialog();

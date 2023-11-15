@@ -45,12 +45,13 @@ namespace gownguru_rental_system
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
+            //browse photo from your computer
             OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Select Photo(*.jpg;*.png;*.gif) |*.jpg;*.png;*.gif";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                string filePath = ofd.FileName;
-                txtPic.Image = new Bitmap(filePath);
+                txtPic.Image = Image.FromFile(ofd.FileName);
             }
         }
 
@@ -60,20 +61,18 @@ namespace gownguru_rental_system
             {
                 if (MessageBox.Show("Are you sure you want to save this gown??", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Image temp = new Bitmap(txtPic.Image);
-                    MemoryStream ms = new MemoryStream();
-                    temp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    Byte[] ByteArray = ms.ToArray();
-
-                    cm = new SqlCommand("INSERT INTO tblGown(gname,gstatus,gsize,gprice,gconditionbefore,gdescription,gcategory,gpic)VALUES(@gname,@gstatus,@gsize,@gprice,@gconditionbefore,@gdescription,@gcategory,@gpic)", con);
+                    cm = new SqlCommand("INSERT INTO tblGown(gname,gdescription,gsize,gcolor,gcondition,gprice,gdateadded,gcategory,gstatus,gpic)VALUES(@gname,@gdescription,@gsize,@gcolor,@gcondition,@gprice,@gdateadded,@gcategory,@gstatus,@gpic)", con);
                     cm.Parameters.AddWithValue("@gname", txtName.Text);
-                    cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
-                    cm.Parameters.AddWithValue("@gsize", cbSize.Text);
-                    cm.Parameters.AddWithValue("@gprice", Convert.ToInt16(txtRprice.Text));
-                    cm.Parameters.AddWithValue("@gconditionbefore", cbConditionBef.Text);
                     cm.Parameters.AddWithValue("@gdescription", txtDesc.Text);
+                    cm.Parameters.AddWithValue("@gsize", cbSize.Text);
+                    cm.Parameters.AddWithValue("@gcolor", txtColor.Text);
+                    cm.Parameters.AddWithValue("@gcondition", cbCondition.Text);
+                    cm.Parameters.AddWithValue("@gprice", Convert.ToInt16(txtRprice.Text));
+                    cm.Parameters.AddWithValue("@gdateAdded", dtDateAdded.Value.ToString("yyyy-MM-dd"));
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
-                    cm.Parameters.AddWithValue("@gpic", ByteArray);
+                    cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
+                    cm.Parameters.AddWithValue("@gpic", txtPic.Image);
+                    
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
@@ -85,7 +84,6 @@ namespace gownguru_rental_system
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -93,10 +91,13 @@ namespace gownguru_rental_system
         public void Clear()
         {
             txtName.Clear();
+            txtDesc.Clear();
+            txtColor.Clear();
             cbStatus.Text = "";
             cbSize.Text = "";
             txtRprice.Clear();
-            cbConditionBef.Text = "";
+            dtDateAdded.Text = "";
+            cbCondition.Text = "";
             txtDesc.Clear();
             cbCategory.Text = "";
         }
@@ -107,20 +108,17 @@ namespace gownguru_rental_system
             {
                 if (MessageBox.Show("Are you sure you want to update this gown?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Image temp = new Bitmap(txtPic.Image);
-                    MemoryStream ms = new MemoryStream();
-                    temp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    Byte[] ByteArray = ms.ToArray();
-
-                    cm = new SqlCommand("UPDATE tblGown SET gname = @gname, gstatus = @gstatus, gsize = @gsize, gprice = @gprice, gconditionbefore = @gconditionbefore, gdescription = @gdescription, gcategory = @gcategory, gpic = @gpic WHERE gid LIKE '" + lblGid.Text + "' ", con);
+                    cm = new SqlCommand("UPDATE tblGown SET gname = @gname, gdescription = @gdescription, gsize = @gsize, gcolor = @gcolor, gcondition = @gcondition, gprice = @gprice, gdateadded = @gdateadded, gcategory = @gcategory, gstatus = @gstatus, gpic = @gpic WHERE gid LIKE '" + lblGid.Text + "' ", con);
                     cm.Parameters.AddWithValue("@gname", txtName.Text);
-                    cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
-                    cm.Parameters.AddWithValue("@gsize", cbSize.Text);
-                    cm.Parameters.AddWithValue("@gprice", Convert.ToInt16(txtRprice.Text));
-                    cm.Parameters.AddWithValue("@gconditionbefore", cbConditionBef.Text);
                     cm.Parameters.AddWithValue("@gdescription", txtDesc.Text);
+                    cm.Parameters.AddWithValue("@gsize", cbSize.Text);
+                    cm.Parameters.AddWithValue("@gcolor", txtColor.Text);
+                    cm.Parameters.AddWithValue("@gcondition", cbCondition.Text);
+                    cm.Parameters.AddWithValue("@gprice", Convert.ToInt16(txtRprice.Text));
+                    cm.Parameters.AddWithValue("@gdateAdded", dtDateAdded.Value.ToString("yyyy-MM-dd"));
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
-                    cm.Parameters.AddWithValue("@gpic", ByteArray);
+                    cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
+                    cm.Parameters.AddWithValue("@gpic", txtPic.Image);
 
                     con.Open();
                     cm.ExecuteNonQuery();

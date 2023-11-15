@@ -1,6 +1,6 @@
 ﻿namespace gownguru_rental_system
 {
-    partial class frmUserAdd
+    partial class frmEmployeeAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserAdd));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployeeAdd));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +47,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtAccount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.SuspendLayout();
@@ -59,13 +61,13 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(341, 60);
+            this.panel2.Size = new System.Drawing.Size(554, 60);
             this.panel2.TabIndex = 3;
             // 
             // pictureBoxClose
             // 
             this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(322, 0);
+            this.pictureBoxClose.Location = new System.Drawing.Point(535, 0);
             this.pictureBoxClose.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(19, 21);
@@ -87,7 +89,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(157, 412);
+            this.btnUpdate.Location = new System.Drawing.Point(375, 300);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 31);
@@ -98,7 +100,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(236, 412);
+            this.btnClear.Location = new System.Drawing.Point(454, 300);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(74, 31);
@@ -109,7 +111,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(78, 412);
+            this.btnSave.Location = new System.Drawing.Point(296, 300);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(74, 31);
@@ -123,7 +125,7 @@
             this.txtFullName.Location = new System.Drawing.Point(31, 157);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(279, 21);
+            this.txtFullName.Size = new System.Drawing.Size(235, 21);
             this.txtFullName.TabIndex = 22;
             // 
             // txtUsername
@@ -131,7 +133,7 @@
             this.txtUsername.Location = new System.Drawing.Point(31, 106);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(279, 21);
+            this.txtUsername.Size = new System.Drawing.Size(235, 21);
             this.txtUsername.TabIndex = 19;
             // 
             // txtPrice
@@ -159,7 +161,7 @@
             this.txtPass.Location = new System.Drawing.Point(31, 208);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(279, 21);
+            this.txtPass.Size = new System.Drawing.Size(235, 21);
             this.txtPass.TabIndex = 36;
             // 
             // label3
@@ -177,7 +179,7 @@
             this.txtRePass.Location = new System.Drawing.Point(31, 259);
             this.txtRePass.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtRePass.Name = "txtRePass";
-            this.txtRePass.Size = new System.Drawing.Size(279, 21);
+            this.txtRePass.Size = new System.Drawing.Size(235, 21);
             this.txtRePass.TabIndex = 38;
             // 
             // label4
@@ -195,7 +197,7 @@
             this.txtPhone.Location = new System.Drawing.Point(31, 310);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(279, 21);
+            this.txtPhone.Size = new System.Drawing.Size(235, 21);
             this.txtPhone.TabIndex = 40;
             // 
             // label5
@@ -210,28 +212,49 @@
             // 
             // txtAccount
             // 
-            this.txtAccount.Location = new System.Drawing.Point(31, 361);
+            this.txtAccount.Location = new System.Drawing.Point(293, 208);
             this.txtAccount.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtAccount.Name = "txtAccount";
-            this.txtAccount.Size = new System.Drawing.Size(279, 21);
+            this.txtAccount.Size = new System.Drawing.Size(235, 21);
             this.txtAccount.TabIndex = 42;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 338);
+            this.label6.Location = new System.Drawing.Point(290, 185);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 16);
             this.label6.TabIndex = 43;
             this.label6.Text = "Account";
             // 
-            // frmUserAdd
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(293, 106);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(235, 72);
+            this.txtAddress.TabIndex = 44;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(290, 83);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 16);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "Address";
+            // 
+            // frmEmployeeAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(341, 468);
+            this.ClientSize = new System.Drawing.Size(554, 360);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtAccount);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPhone);
@@ -250,8 +273,8 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmUserAdd";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "frmEmployeeAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserAdd";
             this.panel2.ResumeLayout(false);
@@ -282,5 +305,7 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txtAccount;
         private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label label7;
     }
 }

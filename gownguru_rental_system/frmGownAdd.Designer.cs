@@ -45,13 +45,17 @@
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.cbSize = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.cbConditionBef = new System.Windows.Forms.ComboBox();
+            this.cbCondition = new System.Windows.Forms.ComboBox();
             this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtPic = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtDateAdded = new System.Windows.Forms.DateTimePicker();
+            this.txtColor = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
@@ -114,7 +118,7 @@
             // lblGid
             // 
             this.lblGid.AutoSize = true;
-            this.lblGid.Location = new System.Drawing.Point(27, 337);
+            this.lblGid.Location = new System.Drawing.Point(27, 414);
             this.lblGid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGid.Name = "lblGid";
             this.lblGid.Size = new System.Drawing.Size(49, 16);
@@ -165,7 +169,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 198);
+            this.label9.Location = new System.Drawing.Point(27, 251);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 16);
@@ -191,11 +195,6 @@
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "Available",
-            "In-Possession",
-            "Lost",
-            "Damaged/Accident"});
             this.cbStatus.Location = new System.Drawing.Point(186, 107);
             this.cbStatus.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbStatus.Name = "cbStatus";
@@ -225,26 +224,26 @@
             this.cbCategory.Size = new System.Drawing.Size(115, 24);
             this.cbCategory.TabIndex = 4;
             // 
-            // cbConditionBef
+            // cbCondition
             // 
-            this.cbConditionBef.FormattingEnabled = true;
-            this.cbConditionBef.Items.AddRange(new object[] {
+            this.cbCondition.FormattingEnabled = true;
+            this.cbCondition.Items.AddRange(new object[] {
             "Brand New",
             "Good",
             "Fair",
             "Poor"});
-            this.cbConditionBef.Location = new System.Drawing.Point(317, 162);
-            this.cbConditionBef.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.cbConditionBef.Name = "cbConditionBef";
-            this.cbConditionBef.Size = new System.Drawing.Size(115, 24);
-            this.cbConditionBef.TabIndex = 5;
+            this.cbCondition.Location = new System.Drawing.Point(317, 162);
+            this.cbCondition.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.cbCondition.Name = "cbCondition";
+            this.cbCondition.Size = new System.Drawing.Size(115, 24);
+            this.cbCondition.TabIndex = 5;
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(30, 217);
+            this.txtDesc.Location = new System.Drawing.Point(30, 270);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(402, 79);
+            this.txtDesc.Size = new System.Drawing.Size(542, 95);
             this.txtDesc.TabIndex = 6;
             this.txtDesc.Text = "";
             // 
@@ -261,7 +260,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(500, 322);
+            this.btnClear.Location = new System.Drawing.Point(498, 399);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(74, 31);
@@ -272,7 +271,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(342, 322);
+            this.btnSave.Location = new System.Drawing.Point(340, 399);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(74, 31);
@@ -283,7 +282,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(421, 322);
+            this.btnUpdate.Location = new System.Drawing.Point(419, 399);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 31);
@@ -304,18 +303,57 @@
             this.txtPic.TabStop = false;
             this.txtPic.Click += new System.EventHandler(this.txtPic_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(183, 199);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 16);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Date Added";
+            // 
+            // dtDateAdded
+            // 
+            this.dtDateAdded.Location = new System.Drawing.Point(186, 219);
+            this.dtDateAdded.Name = "dtDateAdded";
+            this.dtDateAdded.Size = new System.Drawing.Size(246, 21);
+            this.dtDateAdded.TabIndex = 20;
+            // 
+            // txtColor
+            // 
+            this.txtColor.Location = new System.Drawing.Point(30, 220);
+            this.txtColor.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(138, 21);
+            this.txtColor.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 202);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 16);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Color";
+            // 
             // frmGownAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(606, 377);
+            this.ClientSize = new System.Drawing.Size(606, 451);
+            this.Controls.Add(this.txtColor);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dtDateAdded);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtDesc);
-            this.Controls.Add(this.cbConditionBef);
+            this.Controls.Add(this.cbCondition);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.cbSize);
             this.Controls.Add(this.cbStatus);
@@ -368,9 +406,13 @@
         public System.Windows.Forms.ComboBox cbStatus;
         public System.Windows.Forms.ComboBox cbSize;
         public System.Windows.Forms.ComboBox cbCategory;
-        public System.Windows.Forms.ComboBox cbConditionBef;
+        public System.Windows.Forms.ComboBox cbCondition;
         public System.Windows.Forms.Button btnBrowse;
         public System.Windows.Forms.RichTextBox txtDesc;
         public System.Windows.Forms.PictureBox txtPic;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.DateTimePicker dtDateAdded;
+        public System.Windows.Forms.TextBox txtColor;
+        private System.Windows.Forms.Label label4;
     }
 }

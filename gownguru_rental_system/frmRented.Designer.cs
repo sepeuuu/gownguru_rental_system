@@ -1,6 +1,6 @@
 ﻿namespace gownguru_rental_system
 {
-    partial class frmCategory
+    partial class frmRented
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategory));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRented));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.PictureBox();
-            this.dgvCategory = new System.Windows.Forms.DataGridView();
+            this.dgvRented = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +41,7 @@
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRented)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -53,7 +53,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(841, 60);
-            this.panel2.TabIndex = 3;
+            this.panel2.TabIndex = 4;
             // 
             // label2
             // 
@@ -62,25 +62,24 @@
             this.label2.Location = new System.Drawing.Point(12, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 19);
+            this.label2.Size = new System.Drawing.Size(119, 19);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Category";
+            this.label2.Text = "Rented Gowns";
             // 
             // btnAdd
             // 
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(806, 21);
+            this.btnAdd.Location = new System.Drawing.Point(815, 21);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(22, 30);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.TabStop = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dgvCategory
+            // dgvRented
             // 
-            this.dgvCategory.AllowUserToAddRows = false;
-            this.dgvCategory.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRented.AllowUserToAddRows = false;
+            this.dgvRented.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,22 +87,21 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCategory.ColumnHeadersHeight = 30;
-            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRented.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRented.ColumnHeadersHeight = 30;
+            this.dgvRented.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvRented.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3,
             this.Column1,
             this.Column2,
             this.Edit,
             this.Delete});
-            this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCategory.Location = new System.Drawing.Point(0, 60);
-            this.dgvCategory.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.dgvCategory.Name = "dgvCategory";
-            this.dgvCategory.Size = new System.Drawing.Size(841, 411);
-            this.dgvCategory.TabIndex = 10;
-            this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentClick);
+            this.dgvRented.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRented.Location = new System.Drawing.Point(0, 60);
+            this.dgvRented.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dgvRented.Name = "dgvRented";
+            this.dgvRented.Size = new System.Drawing.Size(841, 411);
+            this.dgvRented.TabIndex = 11;
             // 
             // Column3
             // 
@@ -142,25 +140,23 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 5;
             // 
-            // frmCategory
+            // frmRented
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(841, 471);
-            this.Controls.Add(this.dgvCategory);
+            this.Controls.Add(this.dgvRented);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.Name = "frmCategory";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCategory";
-            this.Load += new System.EventHandler(this.frmCategory_Load);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "frmRented";
+            this.Text = "frmRented";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRented)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,7 +166,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnAdd;
-        private System.Windows.Forms.DataGridView dgvCategory;
+        private System.Windows.Forms.DataGridView dgvRented;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
