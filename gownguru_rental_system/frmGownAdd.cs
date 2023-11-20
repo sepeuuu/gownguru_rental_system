@@ -168,5 +168,10 @@ namespace gownguru_rental_system
         {
 
         }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

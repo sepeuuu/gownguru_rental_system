@@ -47,7 +47,6 @@
             this.btnCategory = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.CenterPanel = new System.Windows.Forms.Panel();
@@ -55,7 +54,6 @@
             this.SettingsTimer = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
@@ -65,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,14 +75,14 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(996, 25);
+            this.panel1.Size = new System.Drawing.Size(996, 36);
             this.panel1.TabIndex = 0;
             // 
             // btnMin
             // 
             this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.Location = new System.Drawing.Point(912, 0);
+            this.btnMin.Location = new System.Drawing.Point(894, 8);
             this.btnMin.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(19, 21);
@@ -98,7 +95,7 @@
             // 
             this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(939, 0);
+            this.btnMax.Location = new System.Drawing.Point(930, 8);
             this.btnMax.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(19, 21);
@@ -111,7 +108,7 @@
             // 
             this.pictureBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(966, 0);
+            this.pictureBoxClose.Location = new System.Drawing.Point(966, 8);
             this.pictureBoxClose.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(19, 21);
@@ -231,7 +228,7 @@
             // 
             // GownContainer
             // 
-            this.GownContainer.BackColor = System.Drawing.Color.White;
+            this.GownContainer.BackColor = System.Drawing.Color.Black;
             this.GownContainer.Controls.Add(this.btnReturned);
             this.GownContainer.Controls.Add(this.btnGown);
             this.GownContainer.Controls.Add(this.btnRented);
@@ -342,25 +339,10 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(49, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 96);
+            this.pictureBox1.Size = new System.Drawing.Size(93, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Crimson;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(134, 2);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(55, 31);
-            this.btnLogout.TabIndex = 7;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
             // 
             // btnCustomer
             // 
@@ -405,10 +387,11 @@
             this.CenterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CenterPanel.Location = new System.Drawing.Point(197, 29);
+            this.CenterPanel.BackColor = System.Drawing.Color.White;
+            this.CenterPanel.Location = new System.Drawing.Point(192, 40);
             this.CenterPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(798, 705);
+            this.CenterPanel.Size = new System.Drawing.Size(804, 697);
             this.CenterPanel.TabIndex = 2;
             this.CenterPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.CenterPanel_Paint);
             // 
@@ -424,17 +407,16 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.btnDashboard);
             this.flowLayoutPanel1.Controls.Add(this.GownContainer);
             this.flowLayoutPanel1.Controls.Add(this.btnCustomer);
             this.flowLayoutPanel1.Controls.Add(this.SettingsContainer);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 25);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 36);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 673);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 700);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // panel2
@@ -446,16 +428,6 @@
             this.panel2.Size = new System.Drawing.Size(190, 100);
             this.panel2.TabIndex = 0;
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Controls.Add(this.btnLogout);
-            this.panel3.Location = new System.Drawing.Point(0, 695);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(193, 41);
-            this.panel3.TabIndex = 8;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -463,7 +435,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(996, 736);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -482,7 +453,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -490,7 +460,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.Button btnReturned;
@@ -514,6 +483,5 @@
         private System.Windows.Forms.Timer SettingsTimer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
     }
 }

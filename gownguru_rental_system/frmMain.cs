@@ -83,7 +83,7 @@ namespace gownguru_rental_system
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            //openChildForm(new frmCustomer());
+            openChildForm(new frmCustomer());
             //hideSubMenu();
         }
 
