@@ -87,6 +87,9 @@
             // dgvEmployee
             // 
             this.dgvEmployee.AllowUserToAddRows = false;
+            this.dgvEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmployee.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -108,7 +111,6 @@
             this.Column6,
             this.Edit,
             this.Delete});
-            this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmployee.Location = new System.Drawing.Point(0, 60);
             this.dgvEmployee.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvEmployee.Name = "dgvEmployee";

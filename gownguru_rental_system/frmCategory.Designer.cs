@@ -68,6 +68,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.Location = new System.Drawing.Point(806, 21);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -80,6 +81,9 @@
             // dgvCategory
             // 
             this.dgvCategory.AllowUserToAddRows = false;
+            this.dgvCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCategory.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -97,7 +101,6 @@
             this.Column2,
             this.Edit,
             this.Delete});
-            this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCategory.Location = new System.Drawing.Point(0, 60);
             this.dgvCategory.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvCategory.Name = "dgvCategory";

@@ -35,7 +35,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.PictureBox();
             this.dgvGown = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +49,7 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGown)).BeginInit();
@@ -62,7 +62,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(841, 60);
+            this.panel1.Size = new System.Drawing.Size(948, 60);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -72,9 +72,9 @@
             this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 19);
+            this.label1.Size = new System.Drawing.Size(80, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Gown Management";
+            this.label1.Text = "Gown List";
             // 
             // txtSearch
             // 
@@ -88,8 +88,9 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(806, 78);
+            this.btnAdd.Location = new System.Drawing.Point(913, 78);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(22, 30);
@@ -100,6 +101,9 @@
             // dgvGown
             // 
             this.dgvGown.AllowUserToAddRows = false;
+            this.dgvGown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGown.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -126,23 +130,12 @@
             this.Column12,
             this.Edit,
             this.Delete});
-            this.dgvGown.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvGown.Location = new System.Drawing.Point(0, 113);
             this.dgvGown.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvGown.Name = "dgvGown";
-            this.dgvGown.Size = new System.Drawing.Size(841, 358);
+            this.dgvGown.Size = new System.Drawing.Size(948, 358);
             this.dgvGown.TabIndex = 10;
             this.dgvGown.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGown_CellContentClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 80);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 16);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Search box :";
             // 
             // Column3
             // 
@@ -160,17 +153,15 @@
             // 
             // Column2
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.HeaderText = "Name";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 65;
             // 
             // Column8
             // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column8.HeaderText = "Description";
             this.Column8.Name = "Column8";
-            this.Column8.Width = 91;
             // 
             // Column5
             // 
@@ -195,36 +186,34 @@
             // 
             // Column6
             // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column6.HeaderText = "Price";
             this.Column6.Name = "Column6";
-            this.Column6.Width = 58;
             // 
             // Column10
             // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column10.HeaderText = "Date Added";
             this.Column10.Name = "Column10";
             // 
             // Column11
             // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column11.HeaderText = "Category";
             this.Column11.Name = "Column11";
-            this.Column11.Width = 83;
             // 
             // Column4
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.HeaderText = "Status";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 65;
             // 
             // Column12
             // 
-            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column12.HeaderText = "Image";
             this.Column12.Name = "Column12";
+            this.Column12.Width = 67;
             // 
             // Edit
             // 
@@ -243,12 +232,22 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 5;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Search box :";
+            // 
             // frmGown
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(841, 471);
+            this.ClientSize = new System.Drawing.Size(948, 471);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvGown);
             this.Controls.Add(this.btnAdd);

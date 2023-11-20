@@ -56,6 +56,7 @@
             this.dtDateAdded = new System.Windows.Forms.DateTimePicker();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
@@ -63,6 +64,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.pictureBoxClose);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -88,6 +90,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -254,7 +257,7 @@
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(74, 31);
             this.btnBrowse.TabIndex = 7;
-            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.Text = "Upload";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
@@ -338,6 +341,10 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Color";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmGownAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -414,5 +421,6 @@
         public System.Windows.Forms.DateTimePicker dtDateAdded;
         public System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

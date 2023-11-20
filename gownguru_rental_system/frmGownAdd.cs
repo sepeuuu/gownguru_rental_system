@@ -5,8 +5,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+//using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +20,7 @@ namespace gownguru_rental_system
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QS67U0AV\SQLEXPRESS;Initial Catalog=DB_GRS;Integrated Security=True");
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
+
         public frmGownAdd()
         {
             InitializeComponent();
@@ -44,15 +47,20 @@ namespace gownguru_rental_system
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            //browse photo from your computer
+        {           
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Select Photo(*.jpg;*.png;*.gif) |*.jpg;*.png;*.gif";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                txtPic.Image = new Bitmap(ofd.FileName);
+            }
+            //browse photo from your computer
+            /*OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Select Photo(*.Jpg;*.png;*.Gif) |*.Jpg;*.png;*.Gif";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 txtPic.Image = Image.FromFile(ofd.FileName);
-            }
+            }*/
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -71,13 +79,14 @@ namespace gownguru_rental_system
                     cm.Parameters.AddWithValue("@gdateAdded", dtDateAdded.Value.ToString("yyyy-MM-dd"));
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
-                    cm.Parameters.AddWithValue("@gpic", txtPic.Image);
-                    
+                    cm.Parameters.AddWithValue("@gpic", getPhoto());
+                    /*MemoryStream memstr = new MemoryStream();
+                    txtPic.Image.Save(memstr, txtPic.Image.RawFormat);
+                    cm.Parameters.AddWithValue("@gpic", memstr.ToArray());*/
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Gown has been successfully saved!");
-                    txtPic.Image = Properties.Resources.gownPic1;
                     Clear();
 
                 }
@@ -100,6 +109,7 @@ namespace gownguru_rental_system
             cbCondition.Text = "";
             txtDesc.Clear();
             cbCategory.Text = "";
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -118,20 +128,28 @@ namespace gownguru_rental_system
                     cm.Parameters.AddWithValue("@gdateAdded", dtDateAdded.Value.ToString("yyyy-MM-dd"));
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
-                    cm.Parameters.AddWithValue("@gpic", txtPic.Image);
-
+                    cm.Parameters.AddWithValue("@gpic", getPhoto());
+                    /*MemoryStream memstr = new MemoryStream();
+                    txtPic.Image.Save(memstr, txtPic.Image.RawFormat);
+                    cm.Parameters.AddWithValue("@gpic", memstr.ToArray());*/
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Gown has been successfully updated!");
+                    MessageBox.Show("Gown has been successfully updated!");                   
                     this.Dispose();
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public byte[] getPhoto()
+        {
+            MemoryStream stream = new MemoryStream();
+            txtPic.Image.Save(stream, txtPic.Image.RawFormat);
+            return stream.GetBuffer();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
