@@ -19,6 +19,7 @@ namespace gownguru_rental_system
         public frmCustomer()
         {
             InitializeComponent();
+            LoadCustomer();
         }
 
         public void LoadCustomer()

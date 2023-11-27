@@ -19,10 +19,10 @@ namespace gownguru_rental_system
         public frmEmployee()
         {
             InitializeComponent();
-            LoadCustomer();
+            LoadEmployee();
         }
 
-        public void LoadCustomer()
+        public void LoadEmployee()
         {
             int i = 0;
             dgvEmployee.Rows.Clear();
@@ -44,7 +44,7 @@ namespace gownguru_rental_system
             userModule.btnSave.Enabled = true;
             userModule.btnUpdate.Enabled = false;
             userModule.ShowDialog();
-            LoadCustomer();
+            LoadEmployee();
         }
 
         private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -76,7 +76,7 @@ namespace gownguru_rental_system
                     MessageBox.Show("Record has been successfully deleted!");
                 }
             }
-            LoadCustomer();
+            LoadEmployee();
         }
     }
 }

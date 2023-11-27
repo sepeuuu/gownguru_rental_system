@@ -61,6 +61,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.Location = new System.Drawing.Point(806, 21);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -137,9 +138,10 @@
             // 
             // Column6
             // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column6.HeaderText = "Gender";
             this.Column6.Name = "Column6";
+            this.Column6.Width = 74;
             // 
             // Column7
             // 
@@ -149,9 +151,10 @@
             // 
             // Column8
             // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column8.HeaderText = "Phone";
             this.Column8.Name = "Column8";
+            this.Column8.Width = 67;
             // 
             // Column4
             // 

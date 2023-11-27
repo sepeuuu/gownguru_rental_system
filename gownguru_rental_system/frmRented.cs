@@ -16,5 +16,14 @@ namespace gownguru_rental_system
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmOrder formModule = new frmOrder();
+            //formModule.btnSave.Enabled = true;
+            //formModule.btnUpdate.Enabled = false;
+            formModule.ShowDialog();
+            //LoadGown();
+        }
     }
 }

@@ -118,6 +118,11 @@ namespace gownguru_rental_system
             {
                 if (MessageBox.Show("Are you sure you want to update this gown?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    Image temp = new Bitmap(txtPic.Image);
+                    MemoryStream stream = new MemoryStream();
+                    temp.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                    Byte[] BtyArray = stream.ToArray();
+
                     cm = new SqlCommand("UPDATE tblGown SET gname = @gname, gdescription = @gdescription, gsize = @gsize, gcolor = @gcolor, gcondition = @gcondition, gprice = @gprice, gdateadded = @gdateadded, gcategory = @gcategory, gstatus = @gstatus, gpic = @gpic WHERE gid LIKE '" + lblGid.Text + "' ", con);
                     cm.Parameters.AddWithValue("@gname", txtName.Text);
                     cm.Parameters.AddWithValue("@gdescription", txtDesc.Text);
@@ -147,7 +152,10 @@ namespace gownguru_rental_system
 
         public byte[] getPhoto()
         {
+            //Image temp = new Bitmap(txtPic.Image);
             MemoryStream stream = new MemoryStream();
+            //temp.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+            Byte[] BtyArray = stream.ToArray();
             txtPic.Image.Save(stream, txtPic.Image.RawFormat);
             return stream.GetBuffer();
         }

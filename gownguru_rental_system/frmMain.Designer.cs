@@ -54,6 +54,7 @@
             this.SettingsTimer = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPOS = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
@@ -125,11 +126,11 @@
             this.SettingsContainer.Controls.Add(this.btnArchive);
             this.SettingsContainer.Controls.Add(this.btnEmployee);
             this.SettingsContainer.Controls.Add(this.btnFormerEmp);
-            this.SettingsContainer.Location = new System.Drawing.Point(3, 347);
+            this.SettingsContainer.Location = new System.Drawing.Point(3, 382);
             this.SettingsContainer.MaximumSize = new System.Drawing.Size(193, 176);
             this.SettingsContainer.MinimumSize = new System.Drawing.Size(193, 32);
             this.SettingsContainer.Name = "SettingsContainer";
-            this.SettingsContainer.Size = new System.Drawing.Size(193, 176);
+            this.SettingsContainer.Size = new System.Drawing.Size(193, 167);
             this.SettingsContainer.TabIndex = 17;
             // 
             // btnTransacLog
@@ -139,7 +140,7 @@
             this.btnTransacLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransacLog.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransacLog.ForeColor = System.Drawing.Color.White;
-            this.btnTransacLog.Location = new System.Drawing.Point(0, 140);
+            this.btnTransacLog.Location = new System.Drawing.Point(0, 128);
             this.btnTransacLog.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnTransacLog.Name = "btnTransacLog";
             this.btnTransacLog.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -178,7 +179,7 @@
             this.btnArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArchive.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArchive.ForeColor = System.Drawing.Color.White;
-            this.btnArchive.Location = new System.Drawing.Point(0, 105);
+            this.btnArchive.Location = new System.Drawing.Point(0, 97);
             this.btnArchive.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnArchive.Name = "btnArchive";
             this.btnArchive.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -215,7 +216,7 @@
             this.btnFormerEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFormerEmp.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFormerEmp.ForeColor = System.Drawing.Color.White;
-            this.btnFormerEmp.Location = new System.Drawing.Point(-2, 70);
+            this.btnFormerEmp.Location = new System.Drawing.Point(-2, 66);
             this.btnFormerEmp.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnFormerEmp.Name = "btnFormerEmp";
             this.btnFormerEmp.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -391,7 +392,7 @@
             this.CenterPanel.Location = new System.Drawing.Point(192, 40);
             this.CenterPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(804, 697);
+            this.CenterPanel.Size = new System.Drawing.Size(804, 590);
             this.CenterPanel.TabIndex = 2;
             this.CenterPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.CenterPanel_Paint);
             // 
@@ -412,11 +413,12 @@
             this.flowLayoutPanel1.Controls.Add(this.btnDashboard);
             this.flowLayoutPanel1.Controls.Add(this.GownContainer);
             this.flowLayoutPanel1.Controls.Add(this.btnCustomer);
+            this.flowLayoutPanel1.Controls.Add(this.btnPOS);
             this.flowLayoutPanel1.Controls.Add(this.SettingsContainer);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 36);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 700);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 594);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // panel2
@@ -428,12 +430,30 @@
             this.panel2.Size = new System.Drawing.Size(190, 100);
             this.panel2.TabIndex = 0;
             // 
+            // btnPOS
+            // 
+            this.btnPOS.BackColor = System.Drawing.Color.Black;
+            this.btnPOS.FlatAppearance.BorderSize = 0;
+            this.btnPOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPOS.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPOS.ForeColor = System.Drawing.Color.White;
+            this.btnPOS.Location = new System.Drawing.Point(4, 346);
+            this.btnPOS.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnPOS.Name = "btnPOS";
+            this.btnPOS.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPOS.Size = new System.Drawing.Size(192, 31);
+            this.btnPOS.TabIndex = 1;
+            this.btnPOS.Text = "POS";
+            this.btnPOS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPOS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPOS.UseVisualStyleBackColor = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(996, 736);
+            this.ClientSize = new System.Drawing.Size(996, 630);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.panel1);
@@ -483,5 +503,6 @@
         private System.Windows.Forms.Timer SettingsTimer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnPOS;
     }
 }

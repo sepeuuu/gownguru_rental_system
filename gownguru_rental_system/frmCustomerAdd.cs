@@ -54,5 +54,42 @@ namespace gownguru_rental_system
             txtPhone.Clear();
             txtAddress.Clear();
         }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure you want to update this customer?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cm = new SqlCommand("UPDATE tblCustomer SET cname = @cname, cgender = @cgender, cemail = @cemail, cphone = @cphone, caddress = @cphone WHERE cid LIKE '" + lblCustId.Text + "' ", con);
+                    cm.Parameters.AddWithValue("@cname", txtCustName.Text);
+                    cm.Parameters.AddWithValue("@cgender", cbGender.Text);
+                    cm.Parameters.AddWithValue("@cemail", txtEmail.Text);
+                    cm.Parameters.AddWithValue("@cphone", txtPhone.Text);
+                    cm.Parameters.AddWithValue("@caddress", txtAddress.Text);
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Customer has been successfully updated!");
+                    this.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+            btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
+        }
     }
 }
