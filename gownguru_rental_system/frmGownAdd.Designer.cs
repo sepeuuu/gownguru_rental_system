@@ -297,12 +297,13 @@
             // 
             // txtPic
             // 
-            this.txtPic.Image = global::gownguru_rental_system.Properties.Resources.gownPic1;
+            this.txtPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.txtPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPic.Location = new System.Drawing.Point(465, 89);
             this.txtPic.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtPic.Name = "txtPic";
             this.txtPic.Size = new System.Drawing.Size(107, 126);
-            this.txtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.txtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.txtPic.TabIndex = 11;
             this.txtPic.TabStop = false;
             this.txtPic.Click += new System.EventHandler(this.txtPic_Click);

@@ -47,20 +47,10 @@ namespace gownguru_rental_system
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
-        {           
-            OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                txtPic.Image = new Bitmap(ofd.FileName);
-            }
-            //browse photo from your computer
-            /*OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Select Photo(*.Jpg;*.png;*.Gif) |*.Jpg;*.png;*.Gif";
-
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                txtPic.Image = Image.FromFile(ofd.FileName);
-            }*/
+        {
+            openFileDialog1.Filter = "Image files (*.png) |*.png|(*.jpg)|*.jpg|(*.gif)|*.gif";
+            openFileDialog1.ShowDialog();
+            txtPic.BackgroundImage = Image.FromFile(openFileDialog1.FileName);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -75,14 +65,16 @@ namespace gownguru_rental_system
                     cm.Parameters.AddWithValue("@gsize", cbSize.Text);
                     cm.Parameters.AddWithValue("@gcolor", txtColor.Text);
                     cm.Parameters.AddWithValue("@gcondition", cbCondition.Text);
-                    cm.Parameters.AddWithValue("@gprice", Convert.ToInt16(txtRprice.Text));
+                    cm.Parameters.AddWithValue("@gprice", double.Parse(txtRprice.Text));
                     cm.Parameters.AddWithValue("@gdateAdded", dtDateAdded.Value.ToString("yyyy-MM-dd"));
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
-                    cm.Parameters.AddWithValue("@gpic", getPhoto());
-                    /*MemoryStream memstr = new MemoryStream();
-                    txtPic.Image.Save(memstr, txtPic.Image.RawFormat);
-                    cm.Parameters.AddWithValue("@gpic", memstr.ToArray());*/
+
+                    MemoryStream ms = new MemoryStream();
+                    txtPic.BackgroundImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    byte[] arrImage = ms.GetBuffer();
+                    cm.Parameters.AddWithValue("@gpic", arrImage);
+
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
@@ -109,6 +101,7 @@ namespace gownguru_rental_system
             cbCondition.Text = "";
             txtDesc.Clear();
             cbCategory.Text = "";
+            txtPic.Text = "";
             
         }
 
@@ -118,10 +111,9 @@ namespace gownguru_rental_system
             {
                 if (MessageBox.Show("Are you sure you want to update this gown?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Image temp = new Bitmap(txtPic.Image);
-                    MemoryStream stream = new MemoryStream();
-                    temp.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
-                    Byte[] BtyArray = stream.ToArray();
+                    MemoryStream ms = new MemoryStream();
+                    txtPic.BackgroundImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    byte[] arrImage = ms.GetBuffer();
 
                     cm = new SqlCommand("UPDATE tblGown SET gname = @gname, gdescription = @gdescription, gsize = @gsize, gcolor = @gcolor, gcondition = @gcondition, gprice = @gprice, gdateadded = @gdateadded, gcategory = @gcategory, gstatus = @gstatus, gpic = @gpic WHERE gid LIKE '" + lblGid.Text + "' ", con);
                     cm.Parameters.AddWithValue("@gname", txtName.Text);
@@ -129,14 +121,12 @@ namespace gownguru_rental_system
                     cm.Parameters.AddWithValue("@gsize", cbSize.Text);
                     cm.Parameters.AddWithValue("@gcolor", txtColor.Text);
                     cm.Parameters.AddWithValue("@gcondition", cbCondition.Text);
-                    cm.Parameters.AddWithValue("@gprice", Convert.ToInt16(txtRprice.Text));
+                    cm.Parameters.AddWithValue("@gprice", double.Parse(txtRprice.Text));
                     cm.Parameters.AddWithValue("@gdateAdded", dtDateAdded.Value.ToString("yyyy-MM-dd"));
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
-                    cm.Parameters.AddWithValue("@gpic", getPhoto());
-                    /*MemoryStream memstr = new MemoryStream();
-                    txtPic.Image.Save(memstr, txtPic.Image.RawFormat);
-                    cm.Parameters.AddWithValue("@gpic", memstr.ToArray());*/
+                    cm.Parameters.AddWithValue("@gpic", arrImage);
+                    
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
@@ -148,16 +138,6 @@ namespace gownguru_rental_system
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        public byte[] getPhoto()
-        {
-            //Image temp = new Bitmap(txtPic.Image);
-            MemoryStream stream = new MemoryStream();
-            //temp.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
-            Byte[] BtyArray = stream.ToArray();
-            txtPic.Image.Save(stream, txtPic.Image.RawFormat);
-            return stream.GetBuffer();
         }
 
         private void btnClear_Click(object sender, EventArgs e)

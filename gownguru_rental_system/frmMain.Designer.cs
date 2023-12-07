@@ -55,6 +55,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPOS = new System.Windows.Forms.Button();
+            this.btnScheduler = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
@@ -415,6 +416,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnCustomer);
             this.flowLayoutPanel1.Controls.Add(this.btnPOS);
             this.flowLayoutPanel1.Controls.Add(this.SettingsContainer);
+            this.flowLayoutPanel1.Controls.Add(this.btnScheduler);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 36);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -447,6 +449,25 @@
             this.btnPOS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPOS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPOS.UseVisualStyleBackColor = false;
+            // 
+            // btnScheduler
+            // 
+            this.btnScheduler.BackColor = System.Drawing.Color.Black;
+            this.btnScheduler.FlatAppearance.BorderSize = 0;
+            this.btnScheduler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScheduler.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScheduler.ForeColor = System.Drawing.Color.White;
+            this.btnScheduler.Location = new System.Drawing.Point(4, 554);
+            this.btnScheduler.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnScheduler.Name = "btnScheduler";
+            this.btnScheduler.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnScheduler.Size = new System.Drawing.Size(192, 31);
+            this.btnScheduler.TabIndex = 2;
+            this.btnScheduler.Text = "Scheduler";
+            this.btnScheduler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnScheduler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnScheduler.UseVisualStyleBackColor = false;
+            this.btnScheduler.Click += new System.EventHandler(this.btnScheduler_Click);
             // 
             // frmMain
             // 
@@ -504,5 +525,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPOS;
+        private System.Windows.Forms.Button btnScheduler;
     }
 }

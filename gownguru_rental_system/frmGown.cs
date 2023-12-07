@@ -17,8 +17,6 @@ namespace gownguru_rental_system
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QS67U0AV\SQLEXPRESS;Initial Catalog=DB_GRS;Integrated Security=True");
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
-        
-
         public frmGown()
         {
             InitializeComponent();
@@ -34,17 +32,15 @@ namespace gownguru_rental_system
             while (dr.Read())
             {
                 i++;
-                dgvGown.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString());
+                dgvGown.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString());
+                
             }
             dr.Close();
             con.Close();
         }
-
-        
-
         private void frmGown_Load(object sender, EventArgs e)
         {
-            
+            LoadGown();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -76,6 +76,12 @@
     <Compile Include="frmCustomerAdd.Designer.cs">
       <DependentUpon>frmCustomerAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetails.Designer.cs">
+      <DependentUpon>frmDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGown.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +93,6 @@
     </Compile>
     <Compile Include="frmGownAdd.Designer.cs">
       <DependentUpon>frmGownAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmScheduler.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmScheduler.Designer.cs">
-      <DependentUpon>frmScheduler.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -130,6 +130,12 @@
     <Compile Include="frmEmployeeAdd.Designer.cs">
       <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmScheduler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScheduler.Designer.cs">
+      <DependentUpon>frmScheduler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdminDashboard.resx">
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerAdd.resx">
       <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetails.resx">
+      <DependentUpon>frmDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGown.resx">
       <DependentUpon>frmGown.cs</DependentUpon>

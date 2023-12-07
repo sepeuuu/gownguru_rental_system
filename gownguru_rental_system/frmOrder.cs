@@ -39,7 +39,7 @@ namespace gownguru_rental_system
                 pic.Height = 100;
                 pic.BackgroundImageLayout = ImageLayout.Stretch;
 
-                flowLayoutPanel2.Controls.Add(pic);
+                //flowLayoutPanel2.Controls.Add(pic);
 
             }
             dr.Close();
