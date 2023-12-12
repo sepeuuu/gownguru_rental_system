@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace gownguru_rental_system
 {
     public partial class frmRented : Form
     {
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QS67U0AV\SQLEXPRESS;Initial Catalog=DB_GRS;Integrated Security=True");
+        SqlCommand cm = new SqlCommand();
+        SqlDataReader dr;
         public frmRented()
         {
             InitializeComponent();
@@ -19,11 +23,7 @@ namespace gownguru_rental_system
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmOrder formModule = new frmOrder();
-            //formModule.btnSave.Enabled = true;
-            //formModule.btnUpdate.Enabled = false;
-            formModule.ShowDialog();
-            //LoadGown();
+            
         }
     }
 }

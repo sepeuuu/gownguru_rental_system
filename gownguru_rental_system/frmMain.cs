@@ -64,7 +64,7 @@ namespace gownguru_rental_system
 
         private void btnReturned_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new frmReturned());
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -130,22 +130,17 @@ namespace gownguru_rental_system
 
         private void btnFormerEmp_Click(object sender, EventArgs e)
         {
-            
+            openChildForm(new frmFormerEmployee());
         }
 
         private void btnArchive_Click(object sender, EventArgs e)
         {
-            
+            openChildForm(new frmArchive());
         }
 
         private void btnTransacLog_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void panelGownSubMenu_Paint(object sender, PaintEventArgs e)
-        {
-
+            openChildForm(new frmTransactionLog());
         }
 
         private void GownTimer_Tick(object sender, EventArgs e)
@@ -192,14 +187,14 @@ namespace gownguru_rental_system
             }
         }
 
-        private void CenterPanel_Paint(object sender, PaintEventArgs e)
+        private void btnPOS_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new frmPOS());
         }
 
-        private void btnScheduler_Click(object sender, EventArgs e)
+        private void SettingsContainer_Paint(object sender, PaintEventArgs e)
         {
-            openChildForm(new frmScheduler());
+
         }
     }
 }

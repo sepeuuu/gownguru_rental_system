@@ -22,25 +22,9 @@ namespace gownguru_rental_system
             InitializeComponent();
         }
 
-        public int id = 0;
-
         private void frmDetails_Load(object sender, EventArgs e)
         {
-            if (id > 0)
-            {
-                cm = new SqlCommand("SELECT * FROM tblGown WHERE CONCAT(gid,gname,gdescription,gsize,gcolor,gcondition,gprice,gdateadded,gcategory,gstatus,gpic)", con);
-                txtName.Text = dr["gName"].ToString();
-                txtPrice.Text = dr["gName"].ToString();
-                txtStatus.Text = dr["gName"].ToString();
-                txtColor.Text = dr["gName"].ToString();
-                txtCategory.Text = dr["gName"].ToString();
-                txtCondition.Text = dr["gName"].ToString();
-                txtDescription.Text = dr["gName"].ToString();
-
-                Byte[] ImageArray = (byte[])(dr["gpic"]);
-                byte[] ImageByteArray = ImageArray;
-                txtPic.Image = Image.FromStream(new MemoryStream(ImageArray));
-            }
+            
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)

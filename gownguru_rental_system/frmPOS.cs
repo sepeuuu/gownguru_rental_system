@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace gownguru_rental_system
 {
-    public partial class frmScheduler : Form
+    public partial class frmPOS : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QS67U0AV\SQLEXPRESS;Initial Catalog=DB_GRS;Integrated Security=True");
         SqlCommand cm = new SqlCommand();
@@ -23,17 +23,16 @@ namespace gownguru_rental_system
         private Label price;
         private Label name;
         private Button button;
-
-        public frmScheduler()
+        double _tot;
+        public frmPOS()
         {
             InitializeComponent();
         }
 
-        private void frmScheduler_Load(object sender, EventArgs e)
+        private void frmPOS_Load(object sender, EventArgs e)
         {
             GetData();
         }
-
         private void GetData()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -57,7 +56,7 @@ namespace gownguru_rental_system
                 pic.BackgroundImageLayout = ImageLayout.Stretch;
                 pic.BorderStyle = BorderStyle.FixedSingle;
                 pic.Tag = dr["gid"].ToString();
-                
+
                 //pic.Dock = DockStyle.Top;
 
                 name = new Label();
@@ -99,39 +98,33 @@ namespace gownguru_rental_system
                 flowLayoutPanel1.Controls.Add(panel);
                 panel.Cursor = Cursors.Hand;
 
-                //pagcclick na yung pic may magpapopup na message box, basta macclick na yung picture dito
+                //pagcclick na yung pic may magpapopup na message box, basta macclick na yung details dito
                 button.Click += new EventHandler(OnClick);
 
             }
             dr.Close();
             con.Close();
         }
-
         public void OnClick(object sender, EventArgs e)
         {
-            //String tag = ((Button)sender).Tag.ToString();
-            frmDetails formModule = new frmDetails();
-            formModule.ShowDialog();
+            String tag = ((PictureBox)sender).Tag.ToString();
+            con.Open();
+            cm = new SqlCommand("select * from tblGown where gid like '" + tag + "'", con);
+            dr = cm.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                _tot += double.Parse(dr["gprice"].ToString());                //di nakavisible sa pag add ng ID column ah
+                dgvGown.Rows.Add(dgvGown.Rows.Count + 1, dr["gid"].ToString(), dr["gname"].ToString(), double.Parse(dr["gprice"].ToString()).ToString("#,##0.00"));
+            }
+            dr.Close();
+            con.Close();
+            lblTotal.Text = _tot.ToString("#,##0.00");
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             GetData();
-        }
-
-        public void GetCategory()
-        {
-            //cbCategory.Items.Clear();
-            cm = new SqlCommand("SELECT * FROM tblCategory where catname = '" + cbCategory.SelectedValue.ToString() + "'", con);
-            con.Open();
-            dr = cm.ExecuteReader();
-            dr.Close();
-            con.Close();
-        }
-
-        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GetCategory();
         }
     }
 }

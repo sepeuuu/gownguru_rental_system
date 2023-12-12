@@ -52,6 +52,12 @@
     <Compile Include="frmAdminDashboard.Designer.cs">
       <DependentUpon>frmAdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArchive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArchive.Designer.cs">
+      <DependentUpon>frmArchive.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     <Compile Include="frmDetails.Designer.cs">
       <DependentUpon>frmDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFormerEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormerEmployee.Designer.cs">
+      <DependentUpon>frmFormerEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGown.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,11 +118,11 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmOrder.cs">
+    <Compile Include="frmPOS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOrder.Designer.cs">
-      <DependentUpon>frmOrder.cs</DependentUpon>
+    <Compile Include="frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRented.cs">
       <SubType>Form</SubType>
@@ -130,16 +142,25 @@
     <Compile Include="frmEmployeeAdd.Designer.cs">
       <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmScheduler.cs">
+    <Compile Include="frmReturned.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmScheduler.Designer.cs">
-      <DependentUpon>frmScheduler.cs</DependentUpon>
+    <Compile Include="frmReturned.Designer.cs">
+      <DependentUpon>frmReturned.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransactionLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransactionLog.Designer.cs">
+      <DependentUpon>frmTransactionLog.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdminDashboard.resx">
       <DependentUpon>frmAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArchive.resx">
+      <DependentUpon>frmArchive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategory.resx">
       <DependentUpon>frmCategory.cs</DependentUpon>
@@ -156,6 +177,9 @@
     <EmbeddedResource Include="frmDetails.resx">
       <DependentUpon>frmDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFormerEmployee.resx">
+      <DependentUpon>frmFormerEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGown.resx">
       <DependentUpon>frmGown.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,8 +192,8 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOrder.resx">
-      <DependentUpon>frmOrder.cs</DependentUpon>
+    <EmbeddedResource Include="frmPOS.resx">
+      <DependentUpon>frmPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRented.resx">
       <DependentUpon>frmRented.cs</DependentUpon>
@@ -180,8 +204,11 @@
     <EmbeddedResource Include="frmEmployeeAdd.resx">
       <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmScheduler.resx">
-      <DependentUpon>frmScheduler.cs</DependentUpon>
+    <EmbeddedResource Include="frmReturned.resx">
+      <DependentUpon>frmReturned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactionLog.resx">
+      <DependentUpon>frmTransactionLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
