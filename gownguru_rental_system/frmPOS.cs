@@ -17,13 +17,6 @@ namespace gownguru_rental_system
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QS67U0AV\SQLEXPRESS;Initial Catalog=DB_GRS;Integrated Security=True");
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
-
-        private Panel panel;
-        private PictureBox pic;
-        private Label price;
-        private Label name;
-        private Button button;
-        double _tot;
         public frmPOS()
         {
             InitializeComponent();
@@ -31,100 +24,328 @@ namespace gownguru_rental_system
 
         private void frmPOS_Load(object sender, EventArgs e)
         {
-            GetData();
+            LoadGown();
+            LoadCategoriesIntoComboBox();
+            LoadStatusIntoComboBox();
+            GetCustomer();
         }
-        private void GetData()
+
+        private void LoadGown()
         {
-            flowLayoutPanel1.Controls.Clear();
+            cm = new SqlCommand("SELECT * FROM tblGown", con);
             con.Open();
-            cm = new SqlCommand("select gpic, gname, gprice, gid from tblGown where gname like '%" + txtSearch.Text + "%' order by gname", con);
             dr = cm.ExecuteReader();
+
             while (dr.Read())
             {
-                long len = dr.GetBytes(0, 0, null, 0, 0);
-                byte[] array = new byte[System.Convert.ToInt32(len) + 1];
-                dr.GetBytes(0, 0, array, 0, System.Convert.ToInt32(len));
-
-                panel = new Panel();
-                panel.Width = 150;
-                panel.Height = 250;
-                panel.BackColor = Color.White;
-
-                pic = new PictureBox();
-                pic.Width = 150;
-                pic.Height = 150;
-                pic.BackgroundImageLayout = ImageLayout.Stretch;
-                pic.BorderStyle = BorderStyle.FixedSingle;
-                pic.Tag = dr["gid"].ToString();
-
-                //pic.Dock = DockStyle.Top;
-
-                name = new Label();
-                name.Text = dr["gname"].ToString();
-                //name.BackColor = Color.FromArgb(46, 134, 222);
-                name.ForeColor = Color.Black;
-                name.Font = new Font(name.Font.FontFamily, 12, FontStyle.Regular);
-                name.TextAlign = ContentAlignment.MiddleCenter;
-                name.Dock = DockStyle.Bottom;
-
-
-                price = new Label();
-                price.Text = dr["gprice"].ToString();
-                price.Width = 50;
-                //price.BackColor = Color.FromArgb(255, 121, 121);
-                price.Font = new Font(name.Font.FontFamily, 15, FontStyle.Bold);
-                price.TextAlign = ContentAlignment.MiddleCenter;
-                price.Dock = DockStyle.Bottom;
-
-                button = new Button();
-                button.Width = 30;
-                button.Height = 30;
-                button.Text = "Details";
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackColor = Color.FromArgb(41, 128, 185);
-                button.ForeColor = Color.White;
-                button.Dock = DockStyle.Bottom;
-                //button.BackgroundImageLayout = ImageLayout.Stretch;
-
-
-                MemoryStream ms = new MemoryStream(array);
-                Bitmap bitmap = new Bitmap(ms);
-                pic.BackgroundImage = bitmap;
-
-                panel.Controls.Add(pic);
-                panel.Controls.Add(name);
-                panel.Controls.Add(price);
-                panel.Controls.Add(button);
-                flowLayoutPanel1.Controls.Add(panel);
-                panel.Cursor = Cursors.Hand;
-
-                //pagcclick na yung pic may magpapopup na message box, basta macclick na yung details dito
-                button.Click += new EventHandler(OnClick);
-
+                byte[] ImageArray = (byte[])dr["gpic"];
+                AddGowns(
+                         dr["gid"].ToString(),
+                         dr["gname"].ToString(),
+                         Image.FromStream(new MemoryStream(ImageArray)),
+                         dr["gprice"].ToString()
+                );
             }
             dr.Close();
             con.Close();
         }
-        public void OnClick(object sender, EventArgs e)
+
+        private void AddGowns(string id, string name, Image gpic, string price)
         {
-            String tag = ((PictureBox)sender).Tag.ToString();
-            con.Open();
-            cm = new SqlCommand("select * from tblGown where gid like '" + tag + "'", con);
-            dr = cm.ExecuteReader();
-            dr.Read();
-            if (dr.HasRows)
+            var w = new ucGown()
             {
-                _tot += double.Parse(dr["gprice"].ToString());                //di nakavisible sa pag add ng ID column ah
-                dgvGown.Rows.Add(dgvGown.Rows.Count + 1, dr["gid"].ToString(), dr["gname"].ToString(), double.Parse(dr["gprice"].ToString()).ToString("#,##0.00"));
+                gName = name,
+                gImage = gpic,
+                gPrice = price,
+                id = Convert.ToInt32(id)
+            };
+
+            flowLayoutPanel1.Controls.Add(w);
+            w.onSelect += (ss, ee) =>
+            {
+                var wdg = (ucGown)ss;
+
+                bool found = false; // Flag to determine if the item is found in the DataGridView
+
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells["dgvGownId"].Value) == wdg.id)
+                    {
+                        int currentQty = int.Parse(row.Cells["dgvQty"].Value.ToString()) + 1;
+                        row.Cells["dgvQty"].Value = currentQty;
+                        row.Cells["dgvAmount"].Value = currentQty * int.Parse(row.Cells["dgvPrice"].Value.ToString());
+                        row.Cells["dgvPrice"].Value = wdg.gPrice;
+
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) // If the item is not found, add it to the DataGridView
+                {
+                    dataGridView.Rows.Add(new object[] { 0, 0, wdg.id, wdg.gName, 1, wdg.gPrice, wdg.gPrice });
+                }
+
+                GetTotal(); // Calculate total after updating or adding the item
+            };
+        }
+
+        private void GetTotal()
+        {
+            double tot = 0;
+            txtTotal.Text = "00";
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                tot += double.Parse(row.Cells["dgvAmount"].Value.ToString());
             }
-            dr.Close();
-            con.Close();
-            lblTotal.Text = _tot.ToString("#,##0.00");
+            txtTotal.Text = tot.ToString("N0");
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0) // Check if it's the first column and a valid row
+            {
+                e.Value = e.RowIndex + 1; // Display row numbers starting from 1 instead of 0
+            }
+        }
+
+        private void txtRec_TextChanged(object sender, EventArgs e)
+        {
+            double amt = 0;
+            double rec = 0;
+            double.TryParse(txtTotal.Text, out amt);
+            double.TryParse(txtRec.Text, out rec);
+            double change = rec - amt;
+            txtChange.Text = Math.Abs(change).ToString("N0");
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void Clear()
+        {
+            dataGridView.Rows.Clear();
+            txtTotal.Text = "00";
+            txtChange.Text = "00";
+            txtRec.Text = "00";
+            cbCategory.SelectedIndex = -1;
+            txtCustSearch.Clear();
+            txtCid.Clear();
+            txtCname.Clear();
+            cbStatus.SelectedIndex = -1;
+            dtRent.Value = DateTime.Now;
+            dtReturn.Value = DateTime.Now;
+
+            LoadCategoriesIntoComboBox();
+            LoadStatusIntoComboBox();
+            flowLayoutPanel1.Controls.Clear();
+            LoadGown();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            GetData();
+            foreach (var item in flowLayoutPanel1.Controls)
+            {
+                var gown = (ucGown)item;
+                gown.Visible = gown.gName.ToLower().Contains(txtSearch.Text.Trim().ToLower());
+            }
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = cbCategory.SelectedItem?.ToString();
+
+            if (!string.IsNullOrEmpty(selectedCategory))
+            {
+                // Perform filtering based on selected category
+                FilterGownsByCategory(selectedCategory);
+            }
+        }
+
+        private void LoadCategoriesIntoComboBox()
+        {
+            cbCategory.Items.Clear();
+
+            using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT gcategory FROM tblGown", con))
+            {
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string category = reader["gcategory"].ToString();
+                        cbCategory.Items.Add(category);
+                    }
+                }
+                con.Close();
+            }
+        }
+
+        private void FilterGownsByCategory(string selectedCategory)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            string query = "SELECT * FROM tblGown WHERE gcategory = @gcategory";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@gcategory", selectedCategory);
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        byte[] ImageArray = (byte[])reader["gpic"];
+                        AddGowns(reader["gid"].ToString(), reader["gname"].ToString(), Image.FromStream(new MemoryStream(ImageArray)), reader["gprice"].ToString());
+                    }
+                }
+                con.Close();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtCid.Text == "")
+                {
+                    MessageBox.Show("Please select a customer!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (dataGridView.Rows.Count == 0) // Check if no gown is selected
+                {
+                    MessageBox.Show("Please select gown(s)!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (MessageBox.Show("Are you sure you want to rent this gown(s)?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    con.Open();
+
+                    foreach (DataGridViewRow row in dataGridView.Rows)
+                    {
+                        int gownId = Convert.ToInt32(row.Cells["dgvGownId"].Value);
+                        int qty = Convert.ToInt32(row.Cells["dgvQty"].Value);
+                        double price = Convert.ToDouble(row.Cells["dgvPrice"].Value);
+                        double total = Convert.ToDouble(txtTotal.Text);
+                        // Assuming txtRec and txtChange are TextBox controls, use Text property for their values
+                        double received = Convert.ToDouble(txtRec.Text);
+                        double change = Convert.ToDouble(txtChange.Text);
+                        string status = cbStatus.Text;
+
+                        // Inserting into tblRent
+                        cm = new SqlCommand("INSERT INTO tblRent (rentdate, returndate, gid, cid, qty, price, total, recieve, change, status) " +
+                                            "VALUES (@rentdate, @returndate, @gid, @cid, @qty, @price, @total, @recieve, @change, @status)", con);
+                        cm.Parameters.AddWithValue("@rentdate", dtRent.Value);
+                        cm.Parameters.AddWithValue("@returndate", dtReturn.Value);
+                        cm.Parameters.AddWithValue("@gid", gownId);
+                        cm.Parameters.AddWithValue("@cid", Convert.ToInt32(txtCid.Text));
+                        cm.Parameters.AddWithValue("@qty", qty);
+                        cm.Parameters.AddWithValue("@price", price);
+                        cm.Parameters.AddWithValue("@total", total);
+                        cm.Parameters.AddWithValue("@recieve", received);
+                        cm.Parameters.AddWithValue("@change", change);
+                        cm.Parameters.AddWithValue("@status", status);
+                        cm.ExecuteNonQuery();
+
+                        // Updating gown status in tblGown
+                        cm = new SqlCommand("UPDATE tblGown SET gstatus = @gstatus WHERE gid = @gid", con);
+                        cm.Parameters.AddWithValue("@gstatus", "In-possession"); // Change to the status you need
+                        cm.Parameters.AddWithValue("@gid", gownId);
+                        cm.ExecuteNonQuery();
+                    }
+
+                    con.Close();
+                    MessageBox.Show("Gown(s) have been successfully rented!");
+                    Clear();
+                    LoadGown();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                con.Close();
+            }
+        }
+
+        public void GetCustomer()
+        {
+            int i = 0;
+            dgvCustomer.Rows.Clear();
+            cm = new SqlCommand("SELECT * FROM tblCustomer WHERE CONCAT(cid,cname) LIKE '%" + txtCustSearch.Text + "%'", con);
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                dgvCustomer.Rows.Add(i, dr[0].ToString(), dr[1].ToString());
+            }
+            dr.Close();
+            con.Close();
+        }
+
+        private void txtCustSearch_TextChanged(object sender, EventArgs e)
+        {
+            GetCustomer();
+        }
+
+        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCid.Text = dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtCname.Text = dgvCustomer.Rows[e.RowIndex].Cells[2].Value.ToString();
+        }
+
+        private void cbStat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedStatus = cbStat.SelectedItem?.ToString();
+
+            if (!string.IsNullOrEmpty(selectedStatus))
+            {
+                // Perform filtering based on selected category
+                FilterGownsByStatus(selectedStatus);
+            }
+        }
+
+        private void LoadStatusIntoComboBox()
+        {
+            cbStat.Items.Clear();
+
+            using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT gstatus FROM tblGown", con))
+            {
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string status = reader["gstatus"].ToString();
+                        cbStat.Items.Add(status);
+                    }
+                }
+                con.Close();
+            }
+        }
+
+        private void FilterGownsByStatus(string selectedStatus)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            string query = "SELECT * FROM tblGown WHERE gstatus = @gstatus";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@gstatus", selectedStatus);
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        byte[] ImageArray = (byte[])reader["gpic"];
+                        AddGowns(reader["gid"].ToString(), reader["gname"].ToString(), Image.FromStream(new MemoryStream(ImageArray)), reader["gprice"].ToString());
+                    }
+                }
+                con.Close();
+            }
         }
     }
 }

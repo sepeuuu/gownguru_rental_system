@@ -225,6 +225,7 @@
             this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 12;
             this.label2.Text = "Search box :";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dataGridViewImageColumn1
             // 

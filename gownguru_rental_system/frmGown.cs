@@ -91,5 +91,10 @@ namespace gownguru_rental_system
             }
             LoadGown();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
