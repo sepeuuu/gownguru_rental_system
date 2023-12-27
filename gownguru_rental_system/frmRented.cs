@@ -35,15 +35,28 @@ namespace gownguru_rental_system
             while (dr.Read())
             {
                 i++;
-                dgvRented.Rows.Add(i, dr[0].ToString(), Convert.ToDateTime(dr[1].ToString()).ToString("dd/MM/yyyy"), Convert.ToDateTime(dr[2].ToString()).ToString("dd/MM/yyyy"), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString());
+                dgvRented.Rows.Add(i, dr[0].ToString(), Convert.ToDateTime(dr[1].ToString()).ToString("dd/MM/yyyy"), Convert.ToDateTime(dr[2].ToString()).ToString("dd/MM/yyyy"), 
+                    dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString());
             }
             dr.Close();
             con.Close();
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void dgvRented_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            LoadRented();
+            string colName = dgvRented.Columns[e.ColumnIndex].Name;
+            if (colName == "Delete")
+            {
+                if (MessageBox.Show("Are you sure you want to delete this rented gown?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    con.Open();
+                    cm = new SqlCommand("DELETE FROM tblRent WHERE rentid LIKE '" + dgvRented.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Record has been successfully deleted!");
+                }
+                LoadRented();
+            }
         }
     }
 }

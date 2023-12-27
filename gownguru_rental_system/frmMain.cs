@@ -138,11 +138,6 @@ namespace gownguru_rental_system
             openChildForm(new frmArchive());
         }
 
-        private void btnTransacLog_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frmTransactionLog());
-        }
-
         private void GownTimer_Tick(object sender, EventArgs e)
         {
             if (gownCollapsed)

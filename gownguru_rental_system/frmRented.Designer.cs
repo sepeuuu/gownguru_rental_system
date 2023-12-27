@@ -46,6 +46,7 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRented)).BeginInit();
             this.SuspendLayout();
@@ -106,13 +107,15 @@
             this.Column10,
             this.Column9,
             this.Column11,
-            this.Column12});
+            this.Column12,
+            this.Delete});
             this.dgvRented.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRented.Location = new System.Drawing.Point(0, 60);
             this.dgvRented.Name = "dgvRented";
             this.dgvRented.RowHeadersVisible = false;
             this.dgvRented.Size = new System.Drawing.Size(841, 411);
             this.dgvRented.TabIndex = 5;
+            this.dgvRented.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRented_CellContentClick);
             // 
             // Column1
             // 
@@ -191,6 +194,14 @@
             this.Column12.HeaderText = "Status";
             this.Column12.Name = "Column12";
             // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.Name = "Delete";
+            this.Delete.Width = 5;
+            // 
             // frmRented
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -229,5 +240,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

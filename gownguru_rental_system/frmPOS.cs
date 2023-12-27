@@ -134,7 +134,7 @@ namespace gownguru_rental_system
             txtCustSearch.Clear();
             txtCid.Clear();
             txtCname.Clear();
-            cbStatus.SelectedIndex = -1;
+            cbStat.SelectedIndex = -1;
             dtRent.Value = DateTime.Now;
             dtReturn.Value = DateTime.Now;
 

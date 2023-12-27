@@ -165,4 +165,19 @@
   <metadata name="Column12.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Delete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAFGSURBVDhPvVPLTsMwEDR8AeVYb9I7jz+AXml7Rlzg2G9p
+        4CsRSElavgDaSmXGXaBxN8EgwUijJPbseFcTu3/FxrnDWuSs8n5C8p1rup2OZ5HjSuS+9L7Gc7NLrFV4
+        Fk953lN5NyAeliIvuyYWoVmUWXapZTYgHGK0t7i4ldC2mnLMlM5islNzfJz2YBUkslCbLZicFQAOuUMH
+        U3ClnHIt1jGoRvpzkfNYFIQw4H7d79+QfA+mhrbOslPuB+DUsSVC8Rq8VRl11/heWVpwpLKQ7ijaDDQN
+        vV+2aK9UhpF4G2zR70bWUHgDGiJ2RwPwMxSuxTp0XsLjQO22wEaxJ0znTG2+wJ8Tpy8McScx2fxxMDhS
+        myZ4jdD+T67eK2outNwGTVM6ZWffmn2A46OosIJiAHjOWsfsAtPn7wCTcWCen+yl+bdw7h3akNcK99cb
+        7gAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminDashboard));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblRevenue = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblInPossession = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblDamLost = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblReturned = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblRented = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblGAvailable = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblClients = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblGown = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -112,7 +112,7 @@
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.MistyRose;
-            this.panel9.Controls.Add(this.label15);
+            this.panel9.Controls.Add(this.lblRevenue);
             this.panel9.Controls.Add(this.label16);
             this.panel9.Location = new System.Drawing.Point(634, 98);
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -120,17 +120,17 @@
             this.panel9.Size = new System.Drawing.Size(203, 93);
             this.panel9.TabIndex = 14;
             // 
-            // label15
+            // lblRevenue
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(9, 46);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 16);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "0";
+            this.lblRevenue.AutoSize = true;
+            this.lblRevenue.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRevenue.ForeColor = System.Drawing.Color.Black;
+            this.lblRevenue.Location = new System.Drawing.Point(9, 46);
+            this.lblRevenue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRevenue.Name = "lblRevenue";
+            this.lblRevenue.Size = new System.Drawing.Size(21, 23);
+            this.lblRevenue.TabIndex = 1;
+            this.lblRevenue.Text = "0";
             // 
             // label16
             // 
@@ -149,7 +149,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.Pink;
-            this.panel8.Controls.Add(this.label13);
+            this.panel8.Controls.Add(this.lblInPossession);
             this.panel8.Controls.Add(this.label14);
             this.panel8.Location = new System.Drawing.Point(424, 98);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -157,17 +157,17 @@
             this.panel8.Size = new System.Drawing.Size(202, 93);
             this.panel8.TabIndex = 13;
             // 
-            // label13
+            // lblInPossession
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(9, 46);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(14, 16);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "0";
+            this.lblInPossession.AutoSize = true;
+            this.lblInPossession.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInPossession.ForeColor = System.Drawing.Color.Black;
+            this.lblInPossession.Location = new System.Drawing.Point(9, 46);
+            this.lblInPossession.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInPossession.Name = "lblInPossession";
+            this.lblInPossession.Size = new System.Drawing.Size(21, 23);
+            this.lblInPossession.TabIndex = 1;
+            this.lblInPossession.Text = "0";
             // 
             // label14
             // 
@@ -186,7 +186,7 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.Thistle;
-            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.lblDamLost);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Location = new System.Drawing.Point(214, 98);
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -194,17 +194,17 @@
             this.panel7.Size = new System.Drawing.Size(202, 93);
             this.panel7.TabIndex = 12;
             // 
-            // label10
+            // lblDamLost
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(9, 46);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 16);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "0";
+            this.lblDamLost.AutoSize = true;
+            this.lblDamLost.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDamLost.ForeColor = System.Drawing.Color.Black;
+            this.lblDamLost.Location = new System.Drawing.Point(9, 46);
+            this.lblDamLost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDamLost.Name = "lblDamLost";
+            this.lblDamLost.Size = new System.Drawing.Size(21, 23);
+            this.lblDamLost.TabIndex = 1;
+            this.lblDamLost.Text = "0";
             // 
             // label12
             // 
@@ -223,7 +223,7 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.lblReturned);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Location = new System.Drawing.Point(4, 98);
             this.panel6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -231,17 +231,17 @@
             this.panel6.Size = new System.Drawing.Size(202, 93);
             this.panel6.TabIndex = 11;
             // 
-            // label7
+            // lblReturned
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(9, 46);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 16);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "0";
+            this.lblReturned.AutoSize = true;
+            this.lblReturned.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReturned.ForeColor = System.Drawing.Color.Black;
+            this.lblReturned.Location = new System.Drawing.Point(9, 46);
+            this.lblReturned.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReturned.Name = "lblReturned";
+            this.lblReturned.Size = new System.Drawing.Size(21, 23);
+            this.lblReturned.TabIndex = 1;
+            this.lblReturned.Text = "0";
             // 
             // label8
             // 
@@ -260,7 +260,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.lblRented);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Location = new System.Drawing.Point(634, 2);
             this.panel5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -268,17 +268,17 @@
             this.panel5.Size = new System.Drawing.Size(203, 92);
             this.panel5.TabIndex = 10;
             // 
-            // label5
+            // lblRented
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(9, 46);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(14, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "0";
+            this.lblRented.AutoSize = true;
+            this.lblRented.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRented.ForeColor = System.Drawing.Color.Black;
+            this.lblRented.Location = new System.Drawing.Point(9, 46);
+            this.lblRented.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRented.Name = "lblRented";
+            this.lblRented.Size = new System.Drawing.Size(21, 23);
+            this.lblRented.TabIndex = 1;
+            this.lblRented.Text = "0";
             // 
             // label6
             // 
@@ -297,7 +297,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Khaki;
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.lblGAvailable);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(214, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -305,17 +305,17 @@
             this.panel3.Size = new System.Drawing.Size(202, 92);
             this.panel3.TabIndex = 9;
             // 
-            // label2
+            // lblGAvailable
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(9, 46);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "0";
+            this.lblGAvailable.AutoSize = true;
+            this.lblGAvailable.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGAvailable.ForeColor = System.Drawing.Color.Black;
+            this.lblGAvailable.Location = new System.Drawing.Point(9, 46);
+            this.lblGAvailable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGAvailable.Name = "lblGAvailable";
+            this.lblGAvailable.Size = new System.Drawing.Size(21, 23);
+            this.lblGAvailable.TabIndex = 1;
+            this.lblGAvailable.Text = "0";
             // 
             // label4
             // 
@@ -334,7 +334,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.PaleGreen;
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.lblClients);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Location = new System.Drawing.Point(424, 2);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -342,17 +342,17 @@
             this.panel4.Size = new System.Drawing.Size(202, 92);
             this.panel4.TabIndex = 8;
             // 
-            // label3
+            // lblClients
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(9, 46);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "0";
+            this.lblClients.AutoSize = true;
+            this.lblClients.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClients.ForeColor = System.Drawing.Color.Black;
+            this.lblClients.Location = new System.Drawing.Point(9, 46);
+            this.lblClients.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblClients.Name = "lblClients";
+            this.lblClients.Size = new System.Drawing.Size(21, 23);
+            this.lblClients.TabIndex = 1;
+            this.lblClients.Text = "0";
             // 
             // label11
             // 
@@ -371,7 +371,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.lblGown);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(4, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -379,17 +379,17 @@
             this.panel2.Size = new System.Drawing.Size(202, 92);
             this.panel2.TabIndex = 0;
             // 
-            // label9
+            // lblGown
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(9, 46);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(14, 16);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "0";
+            this.lblGown.AutoSize = true;
+            this.lblGown.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGown.ForeColor = System.Drawing.Color.Black;
+            this.lblGown.Location = new System.Drawing.Point(9, 46);
+            this.lblGown.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGown.Name = "lblGown";
+            this.lblGown.Size = new System.Drawing.Size(21, 23);
+            this.lblGown.TabIndex = 1;
+            this.lblGown.Text = "0";
             // 
             // label1
             // 
@@ -440,14 +440,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRented.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRented.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRented.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRented.ColumnHeadersHeight = 30;
             this.dgvRented.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRented.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -558,6 +558,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "frmAdminDashboard";
             this.Text = "frmAdminDashboard";
+            this.Load += new System.EventHandler(this.frmAdminDashboard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -585,28 +586,28 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblRevenue;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblInPossession;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblDamLost;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblReturned;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblRented;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblGAvailable;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblClients;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblGown;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtSearch;

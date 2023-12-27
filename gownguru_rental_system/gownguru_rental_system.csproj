@@ -210,6 +210,9 @@
     <EmbeddedResource Include="frmEmployeeAdd.resx">
       <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReturnAdd.resx">
+      <DependentUpon>frmReturnAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReturned.resx">
       <DependentUpon>frmReturned.cs</DependentUpon>
     </EmbeddedResource>
