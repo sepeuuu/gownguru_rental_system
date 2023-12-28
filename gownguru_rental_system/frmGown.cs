@@ -56,7 +56,6 @@ namespace gownguru_rental_system
         {
             LoadGown();
         }
-
         private void dgvGown_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvGown.Columns[e.ColumnIndex].Name;

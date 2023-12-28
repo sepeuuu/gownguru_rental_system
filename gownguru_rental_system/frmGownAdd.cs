@@ -126,11 +126,11 @@ namespace gownguru_rental_system
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
                     cm.Parameters.AddWithValue("@gpic", arrImage);
-                    
+
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Gown has been successfully updated!");                   
+                    MessageBox.Show("Gown has been successfully updated!");
                     this.Dispose();
                 }
             }
@@ -139,8 +139,61 @@ namespace gownguru_rental_system
                 MessageBox.Show(ex.Message);
             }
         }
+        
+    
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void LoadGownDetails(string gownID)
+        {
+            try
+            {
+                con.Open();
+
+                // Prepare SQL command to select gown details
+                cm = new SqlCommand("SELECT * FROM tblGown WHERE gid = @gid", con);
+                cm.Parameters.AddWithValue("@gid", gownID);
+
+                SqlDataReader dr = cm.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    // Update UI fields with gown details from the database
+                    txtName.Text = dr["gname"].ToString();
+                    txtDesc.Text = dr["gdescription"].ToString();
+                    cbSize.Text = dr["gsize"].ToString();
+                    txtColor.Text = dr["gcolor"].ToString();
+                    cbCondition.Text = dr["gcondition"].ToString();
+                    txtRprice.Text = dr["gprice"].ToString();
+                    dtDateAdded.Value = Convert.ToDateTime(dr["gdateadded"]);
+                    cbCategory.Text = dr["gcategory"].ToString();
+                    cbStatus.Text = dr["gstatus"].ToString();
+
+                    // Update the picture box with the gown image
+                    if (!(dr["gpic"] is DBNull))
+                    {
+                        byte[] imageData = (byte[])dr["gpic"];
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            txtPic.BackgroundImage = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        // If no image is present, you may set a default image or leave it blank
+                        txtPic.BackgroundImage = null;
+                    }
+                }
+
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+            private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
             btnSave.Enabled = true;
@@ -152,9 +205,11 @@ namespace gownguru_rental_system
 
         }
 
+        private bool isImageChanged = false;
+
         private void txtPic_Click(object sender, EventArgs e)
         {
-
+            isImageChanged = true;
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
