@@ -15,10 +15,11 @@ namespace gownguru_rental_system
     {
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QS67U0AV\SQLEXPRESS;Initial Catalog=DB_GRS;Integrated Security=True");
         SqlCommand cm = new SqlCommand();
-        //SqlDataReader dr;
+        SqlDataReader dr;
         public frmAdminDashboard()
         {
             InitializeComponent();
+            LoadRented();
         }
 
         private void frmAdminDashboard_Load(object sender, EventArgs e)
@@ -46,10 +47,15 @@ namespace gownguru_rental_system
                 int rentedcount = (int)cm.ExecuteScalar();
                 lblRented.Text = rentedcount.ToString();
 
+                // Get count of returned gowns excluding 'lost' status
+                cm = new SqlCommand("SELECT COUNT(*) FROM tblReturn WHERE status != 'lost'", con);
+                int nonLostReturnedCount = (int)cm.ExecuteScalar();
+                lblReturned.Text = nonLostReturnedCount.ToString();
+
                 // Get count of returned gowns
-                cm = new SqlCommand("SELECT COUNT(*) FROM tblGown WHERE gstatus = 'returned'", con);
+                /*cm = new SqlCommand("SELECT COUNT(*) FROM tblGown WHERE gstatus = 'returned'", con);
                 int returnedcount = (int)cm.ExecuteScalar();
-                lblReturned.Text = returnedcount.ToString();
+                lblReturned.Text = returnedcount.ToString();*/
 
                 // Get count of damaged or lost gowns
                 cm = new SqlCommand("SELECT COUNT(*) FROM tblGown WHERE gstatus IN ('damaged', 'lost')", con);
@@ -57,7 +63,7 @@ namespace gownguru_rental_system
                 lblDamLost.Text = damlostcount.ToString();
 
                 // Get count of gowns in possession
-                cm = new SqlCommand("SELECT COUNT(*) FROM tblGown WHERE gstatus = 'in-possession'", con);
+                cm = new SqlCommand("SELECT COUNT(*) FROM tblRent WHERE status = 'in-possession'", con);
                 int inpossessioncount = (int)cm.ExecuteScalar();
                 lblInPossession.Text = inpossessioncount.ToString();
 
@@ -81,10 +87,36 @@ namespace gownguru_rental_system
             {
                 MessageBox.Show(ex.Message);
             }
+        }
 
-            
-            
+        public void LoadRented()
+        {
+            int i = 0;
+            dgvRented.Rows.Clear();
+            DateTime today = DateTime.Today;
 
+            cm = new SqlCommand("SELECT rentid, rentdate, returndate, R.gid, G.gname, R.cid, C.cname, qty, price, total, status " +
+                                "FROM tblRent AS R " +
+                                "JOIN tblCustomer AS C ON R.cid = C.cid " +
+                                "JOIN tblGown AS G ON R.gid = G.gid " +
+                                "WHERE CONVERT(date, rentdate) = '" + today.ToString("yyyy-MM-dd") + "' " +
+                                "AND CONCAT(G.gname, R.cid, C.cname) LIKE '%" + txtSearch.Text + "%'", con);
+            
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                dgvRented.Rows.Add(i, dr[0].ToString(), Convert.ToDateTime(dr[1].ToString()).ToString("dd/MM/yyyy"), Convert.ToDateTime(dr[2].ToString()).ToString("dd/MM/yyyy"),
+                    dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString());
+            }
+            dr.Close();
+            con.Close();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadRented();
         }
     }
 }

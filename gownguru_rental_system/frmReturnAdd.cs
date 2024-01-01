@@ -65,8 +65,8 @@ namespace gownguru_rental_system
 
             if (NrOfDays <= 0)
             {
-                txtDelay.Text = "No Delay";
-                txtFine.Text = "No Fine";
+                txtDelay.Text = "0";
+                txtFine.Text = "0"; // Set fine to 0 if there's no delay
             }
             else
             {
@@ -101,9 +101,26 @@ namespace gownguru_rental_system
 
         private void CalculateOverallTotal()
         {
-            // Perform a null check before parsing values
             if (double.TryParse(txtTotal.Text, out double total) && double.TryParse(txtFine.Text, out double fine))
             {
+                if (txtDelay.Text == "0")
+                {
+                    if (cbStatus.SelectedItem != null)
+                    {
+                        string selectedStatus = cbStatus.SelectedItem.ToString();
+
+                        if (selectedStatus.Equals("Lost", StringComparison.OrdinalIgnoreCase))
+                        {
+                            fine = 500; // Set fine to 500 for Lost item without delay
+                            txtFine.Text = fine.ToString();
+                        }
+                        else if (selectedStatus.Equals("Damaged", StringComparison.OrdinalIgnoreCase))
+                        {
+                            fine = 300; // Set fine to 300 for Damaged item without delay
+                            txtFine.Text = fine.ToString();
+                        }
+                    }
+                }
                 double overallTotal = total + fine;
                 // Display the overall total in a TextBox or wherever you wish to show it
                 txtOverallTotal.Text = overallTotal.ToString();
