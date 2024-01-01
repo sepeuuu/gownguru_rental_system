@@ -48,9 +48,13 @@ namespace gownguru_rental_system
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Image files (*.png) |*.png|(*.jpg)|*.jpg|(*.gif)|*.gif";
-            openFileDialog1.ShowDialog();
-            txtPic.BackgroundImage = Image.FromFile(openFileDialog1.FileName);
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string filPath = ofd.FileName;
+                txtPic.Image = new Bitmap(filPath);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -70,10 +74,12 @@ namespace gownguru_rental_system
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
 
+                    Image temp = new Bitmap(txtPic.Image);
                     MemoryStream ms = new MemoryStream();
-                    txtPic.BackgroundImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    byte[] arrImage = ms.GetBuffer();
-                    cm.Parameters.AddWithValue("@gpic", arrImage);
+                    temp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    Byte[] BtyArray = ms.ToArray();
+                    cm.Parameters.AddWithValue("@gpic", BtyArray);
+
 
                     con.Open();
                     cm.ExecuteNonQuery();
@@ -111,10 +117,6 @@ namespace gownguru_rental_system
             {
                 if (MessageBox.Show("Are you sure you want to update this gown?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MemoryStream ms = new MemoryStream();
-                    txtPic.BackgroundImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    byte[] arrImage = ms.GetBuffer();
-
                     cm = new SqlCommand("UPDATE tblGown SET gname = @gname, gdescription = @gdescription, gsize = @gsize, gcolor = @gcolor, gcondition = @gcondition, gprice = @gprice, gdateadded = @gdateadded, gcategory = @gcategory, gstatus = @gstatus, gpic = @gpic WHERE gid LIKE '" + lblGid.Text + "' ", con);
                     cm.Parameters.AddWithValue("@gname", txtName.Text);
                     cm.Parameters.AddWithValue("@gdescription", txtDesc.Text);
@@ -125,7 +127,20 @@ namespace gownguru_rental_system
                     cm.Parameters.AddWithValue("@gdateAdded", dtDateAdded.Value.ToString("yyyy-MM-dd"));
                     cm.Parameters.AddWithValue("@gcategory", cbCategory.Text);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
-                    cm.Parameters.AddWithValue("@gpic", arrImage);
+
+                    if (txtPic.Image != null)
+                    {
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            txtPic.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                            byte[] imageByteArray = ms.ToArray();
+                            cm.Parameters.AddWithValue("@gpic", imageByteArray);
+                        }
+                    }
+                    else
+                    {                        
+                        cm.Parameters.AddWithValue("@gpic", DBNull.Value);
+                    }
 
                     con.Open();
                     cm.ExecuteNonQuery();
@@ -140,60 +155,7 @@ namespace gownguru_rental_system
             }
         }
         
-    
-
-        private void LoadGownDetails(string gownID)
-        {
-            try
-            {
-                con.Open();
-
-                // Prepare SQL command to select gown details
-                cm = new SqlCommand("SELECT * FROM tblGown WHERE gid = @gid", con);
-                cm.Parameters.AddWithValue("@gid", gownID);
-
-                SqlDataReader dr = cm.ExecuteReader();
-
-                if (dr.Read())
-                {
-                    // Update UI fields with gown details from the database
-                    txtName.Text = dr["gname"].ToString();
-                    txtDesc.Text = dr["gdescription"].ToString();
-                    cbSize.Text = dr["gsize"].ToString();
-                    txtColor.Text = dr["gcolor"].ToString();
-                    cbCondition.Text = dr["gcondition"].ToString();
-                    txtRprice.Text = dr["gprice"].ToString();
-                    dtDateAdded.Value = Convert.ToDateTime(dr["gdateadded"]);
-                    cbCategory.Text = dr["gcategory"].ToString();
-                    cbStatus.Text = dr["gstatus"].ToString();
-
-                    // Update the picture box with the gown image
-                    if (!(dr["gpic"] is DBNull))
-                    {
-                        byte[] imageData = (byte[])dr["gpic"];
-                        using (MemoryStream ms = new MemoryStream(imageData))
-                        {
-                            txtPic.BackgroundImage = Image.FromStream(ms);
-                        }
-                    }
-                    else
-                    {
-                        // If no image is present, you may set a default image or leave it blank
-                        txtPic.BackgroundImage = null;
-                    }
-                }
-
-                dr.Close();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-
-            private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
             btnSave.Enabled = true;
@@ -204,12 +166,10 @@ namespace gownguru_rental_system
         {
 
         }
-
-        private bool isImageChanged = false;
-
+      
         private void txtPic_Click(object sender, EventArgs e)
         {
-            isImageChanged = true;
+            
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)

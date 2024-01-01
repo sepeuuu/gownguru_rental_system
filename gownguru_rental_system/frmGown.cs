@@ -32,8 +32,22 @@ namespace gownguru_rental_system
             while (dr.Read())
             {
                 i++;
-                dgvGown.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString());
-                
+
+                // Read the image data (assumed to be in the 11th column, index 10)
+                byte[] imageData = dr[10] as byte[];
+
+                // Convert the byte array to an Image
+                Image img = null;
+                if (imageData != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        img = Image.FromStream(ms);
+                    }
+                }
+
+                // Add data to the DataGridView, including the image in the 11th cell
+                dgvGown.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), img);
             }
             dr.Close();
             con.Close();
@@ -72,7 +86,14 @@ namespace gownguru_rental_system
                 gownAdd.dtDateAdded.Text = dgvGown.Rows[e.RowIndex].Cells[8].Value.ToString();
                 gownAdd.cbCategory.Text = dgvGown.Rows[e.RowIndex].Cells[9].Value.ToString();
                 gownAdd.cbStatus.Text = dgvGown.Rows[e.RowIndex].Cells[10].Value.ToString();
-                gownAdd.txtPic.Text = dgvGown.Rows[e.RowIndex].Cells[11].Value.ToString();
+    
+                Image img = dgvGown.Rows[e.RowIndex].Cells[11].Value as Image;
+
+                if (img != null)
+                {
+                    gownAdd.txtPic.Image = new Bitmap(img);
+                }
+
                 gownAdd.btnSave.Enabled = false;
                 gownAdd.btnUpdate.Enabled = true;
                 gownAdd.ShowDialog();

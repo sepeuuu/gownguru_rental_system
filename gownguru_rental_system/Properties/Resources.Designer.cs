@@ -73,9 +73,29 @@ namespace gownguru_rental_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _352547_edit_mode_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("352547_edit_mode_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _5402366_delete_remove_cross_cancel_close_icon {
             get {
                 object obj = ResourceManager.GetObject("5402366_delete_remove_cross_cancel_close_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5402366_delete_remove_cross_cancel_close_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("5402366_delete_remove_cross_cancel_close_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -127,10 +127,16 @@
   <data name="352547_edit_mode_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\352547_edit_mode_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gownPic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gownPic1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="9990401_mannequin_fashion_clothing_dress_clothes_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9990401_mannequin_fashion_clothing_dress_clothes_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gownPic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gownPic1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="5402366_delete_remove_cross_cancel_close_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5402366_delete_remove_cross_cancel_close_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="352547_edit_mode_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\352547_edit_mode_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
