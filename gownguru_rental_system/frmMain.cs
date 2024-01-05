@@ -191,5 +191,10 @@ namespace gownguru_rental_system
         {
 
         }
+
+        private void btnTransactionLog_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmTransactionLog());
+        }
     }
 }

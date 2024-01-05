@@ -154,6 +154,12 @@
     <Compile Include="frmReturned.Designer.cs">
       <DependentUpon>frmReturned.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTransactionLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransactionLog.Designer.cs">
+      <DependentUpon>frmTransactionLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReturned.resx">
       <DependentUpon>frmReturned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactionLog.resx">
+      <DependentUpon>frmTransactionLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

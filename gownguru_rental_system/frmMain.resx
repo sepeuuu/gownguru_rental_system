@@ -257,6 +257,14 @@
   <metadata name="SettingsTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>131, 17</value>
   </metadata>
+  <data name="btnSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAHBJREFUOE/tjjsKgDAQRFNZKh7W0kZSeTEb7xTf6kaIf2KZfTAQZjPDOKNkQgiV
+        Pk883S4h0KEZtWrt4DVoQr1a7/B5QEJSyrtGUiaMan+DQFKK8ssiBP2WX4timddzHhTEpULesiMUydJ/
+        ywzjDucWR+qAZD3GMpYAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
@@ -1506,14 +1514,6 @@
         hT9dOveuHy+5666fdD165+Mrnr390RUvz7z1hd9ccs1DS04YfWHrmBPtVjg2Kt4xFrZnApEvfPmfE4BI
         F/58a6fheyzZaqv+v0mg8PKAAVs/mwDj0YHbDLprwIBt5vbr1+/KAQMHThw8eMiYnYfvdvRBX//GPl87
         8OvbJxbx6X/8x3/862aaddSxBYw/+ZP/D7hNBtzIsZZyAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAHBJREFUOE/tjjsKgDAQRFNZKh7W0kZSeTEb7xTf6kaIf2KZfTAQZjPDOKNkQgiV
-        Pk883S4h0KEZtWrt4DVoQr1a7/B5QEJSyrtGUiaMan+DQFKK8ssiBP2WX4timddzHhTEpULesiMUydJ/
-        ywzjDucWR+qAZD3GMpYAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

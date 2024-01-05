@@ -26,30 +26,41 @@ namespace gownguru_rental_system
         {
             try
             {
-                cm = new SqlCommand("SELECT * FROM tblEmployee WHERE username= '" + txtUsername.Text + "' and password= '" + txtPass.Text + "'", con);
+                cm = new SqlCommand("SELECT * FROM tblEmployee WHERE username= @username and password= @password", con);
+                cm.Parameters.AddWithValue("@username", txtUsername.Text);
+                cm.Parameters.AddWithValue("@password", txtPass.Text);
+
                 con.Open();
                 dr = cm.ExecuteReader();
 
-                if (dr.Read() == true)
+                if (dr.Read())
                 {
                     new frmMain().Show();
                     this.Hide();
                 }
                 else
                 {
-                MessageBox.Show("Invalid username or password, Please Try Again", "LoginFailed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsername.Text = "";
-                txtPass.Text = "";
-                txtUsername.Focus();
+                    MessageBox.Show("Invalid username or password, Please Try Again", "LoginFailed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUsername.Text = "";
+                    txtPass.Text = "";
+                    txtUsername.Focus();
                 }
+                dr.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex);
             }
-
-
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
         }
+
+
 
         private void btnClear_Click(object sender, EventArgs e)
         {

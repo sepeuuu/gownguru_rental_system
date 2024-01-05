@@ -54,6 +54,7 @@
             this.SettingsContainer = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.CenterPanel = new System.Windows.Forms.Panel();
+            this.btnTransactionLog = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
@@ -383,6 +384,7 @@
             // SettingsContainer
             // 
             this.SettingsContainer.BackColor = System.Drawing.Color.Black;
+            this.SettingsContainer.Controls.Add(this.btnTransactionLog);
             this.SettingsContainer.Controls.Add(this.btnArchive);
             this.SettingsContainer.Controls.Add(this.btnSettings);
             this.SettingsContainer.Controls.Add(this.btnFormerEmp);
@@ -425,6 +427,24 @@
             this.CenterPanel.Name = "CenterPanel";
             this.CenterPanel.Size = new System.Drawing.Size(1011, 713);
             this.CenterPanel.TabIndex = 4;
+            // 
+            // btnTransactionLog
+            // 
+            this.btnTransactionLog.BackColor = System.Drawing.Color.Black;
+            this.btnTransactionLog.FlatAppearance.BorderSize = 0;
+            this.btnTransactionLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTransactionLog.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransactionLog.ForeColor = System.Drawing.Color.White;
+            this.btnTransactionLog.Location = new System.Drawing.Point(0, 159);
+            this.btnTransactionLog.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnTransactionLog.Name = "btnTransactionLog";
+            this.btnTransactionLog.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnTransactionLog.Size = new System.Drawing.Size(193, 31);
+            this.btnTransactionLog.TabIndex = 15;
+            this.btnTransactionLog.Text = "Transaction Log";
+            this.btnTransactionLog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTransactionLog.UseVisualStyleBackColor = false;
+            this.btnTransactionLog.Click += new System.EventHandler(this.btnTransactionLog_Click);
             // 
             // frmMain
             // 
@@ -481,5 +501,6 @@
         private System.Windows.Forms.Button btnPOS;
         private System.Windows.Forms.Panel CenterPanel;
         private System.Windows.Forms.Panel SettingsContainer;
+        private System.Windows.Forms.Button btnTransactionLog;
     }
 }

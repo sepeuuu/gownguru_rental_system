@@ -148,6 +148,7 @@
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column3.HeaderText = "Gown Id";
             this.Column3.Name = "Column3";
+            this.Column3.Visible = false;
             this.Column3.Width = 80;
             // 
             // Column4
@@ -161,6 +162,7 @@
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column5.HeaderText = "Customer Id";
             this.Column5.Name = "Column5";
+            this.Column5.Visible = false;
             this.Column5.Width = 97;
             // 
             // Column6
