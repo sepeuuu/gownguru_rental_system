@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -135,6 +136,7 @@ namespace gownguru_rental_system
             txtCid.Clear();
             txtCname.Clear();
             cbStat.SelectedIndex = -1;
+            cbStatus.SelectedIndex = -1;
             dtRent.Value = DateTime.Now;
             dtReturn.Value = DateTime.Now;
 
@@ -217,6 +219,27 @@ namespace gownguru_rental_system
                 if (dataGridView.Rows.Count == 0) // Check if no gown is selected
                 {
                     MessageBox.Show("Please select gown(s)!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validate rent date and return date
+                if (dtRent.Value > dtReturn.Value)
+                {
+                    MessageBox.Show("Return date should be after the rent date!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validate status
+                if (string.IsNullOrWhiteSpace(cbStatus.Text))
+                {
+                    MessageBox.Show("Please select a status!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validate received amount
+                if (string.IsNullOrWhiteSpace(txtRec.Text) || !Regex.IsMatch(txtRec.Text, @"^\d+$"))
+                {
+                    MessageBox.Show("Please enter a valid received amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -346,6 +369,11 @@ namespace gownguru_rental_system
                 }
                 con.Close();
             }
+        }
+
+        private void txtChange_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

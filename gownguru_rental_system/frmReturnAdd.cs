@@ -149,6 +149,8 @@ namespace gownguru_rental_system
             txtFine.Clear();
             txtTotal.Clear();
             txtOverallTotal.Clear();
+            cbConditionAft.SelectedIndex = -1;
+            cbStatus.SelectedIndex = -1;
         }
 
         private void dgvGownOnRent_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -179,6 +181,20 @@ namespace gownguru_rental_system
                     return;
                 }
 
+                // Validate condition after return
+                if (string.IsNullOrWhiteSpace(cbConditionAft.Text))
+                {
+                    MessageBox.Show("Please select the condition after renting!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validate status
+                if (string.IsNullOrWhiteSpace(cbStatus.Text))
+                {
+                    MessageBox.Show("Please select the status!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (MessageBox.Show("Are you sure you want to return this gown?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cm = new SqlCommand("INSERT INTO tblReturn(rentid,gid,cid,rentdate,returndate,conditionafter,delay,status,fine,total)VALUES(@rentid,@gid,@cid,@rentdate,@returndate,@conditionafter,@delay,@status,@fine,@total)", con);
@@ -199,6 +215,13 @@ namespace gownguru_rental_system
 
                     cm = new SqlCommand("UPDATE tblGown SET gstatus = @gstatus WHERE gid LIKE '" + txtGownId.Text + "' ", con);
                     cm.Parameters.AddWithValue("@gstatus", cbStatus.Text);
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    
+                    // here yyung dinagdag koooo
+                    cm = new SqlCommand("UPDATE tblGown SET gcondition = @gcondition WHERE gid LIKE '" + txtGownId.Text + "' ", con);
+                    cm.Parameters.AddWithValue("@gcondition", cbConditionAft.Text);
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
